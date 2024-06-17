@@ -1,27 +1,37 @@
-// webpack.mix.js
+const mix = require('laravel-mix');
+const CompressionWebpackPlugin = require('compression-webpack-plugin');
+const rimraf = require('rimraf');
 
-const mix = require("laravel-mix");
-const CompressionWebpackPlugin = require("compression-webpack-plugin");
+// Clean the dist folder before building when in production
+if (mix.inProduction()) {
+    mix.before(() => {
+        rimraf.sync('dist');
+    });
+}
 mix
     .options({
         processCssUrls: false,
+        postCss: [
+            require('tailwindcss'), // Ensure Tailwind CSS is added here
+            require('autoprefixer'), // Ensure Autoprefixer is included
+        ],
     })
-    .js('src/app.js', 'js')
-    .sass('src/app.scss', 'css')
+    .js('src/app.js', 'js/app.js')
+    .sass('src/app.scss', 'css/app.css')
     .setPublicPath('dist')
-    // Example of copying Fonts to dist folder. Comment out if you don't need this or delete it.
-    .copyDirectory('src/sass/fonts/roboto', 'dist/css/fonts')
-    .sourceMaps(true, 'source-map')
-
     .disableNotifications();
+
+if (!mix.inProduction()) {
+    mix.sourceMaps(true, 'source-map');
+}
 
 mix.webpackConfig({
     plugins: [
+
         new CompressionWebpackPlugin({
-            algorithm: "gzip",
-            test: /\.js$|\.css$|\.html$|\.svg$/,
-            threshold: 10240,
-            minRatio: 0.8
-        })
-    ]
+            algorithm: 'gzip',
+            test: /\.(js|css|html|svg)$/,
+            minRatio: 0.8,
+        }),
+    ],
 });

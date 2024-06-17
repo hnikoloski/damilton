@@ -20,34 +20,24 @@
     <link rel="profile" href="https://gmpg.org/xfn/11">
 
     <?php wp_head(); ?>
+    <?php
+    $userLoggedIn = is_user_logged_in();
+    ?>
 </head>
 
 <body <?php body_class(); ?>>
-    <?php wp_body_open(); ?>
+    <?php wp_body_open();
+    // require('template-parts/preloader.php');
+    $custom_logo_id = get_theme_mod('custom_logo');
+    $logoUrl = wp_get_attachment_image_src($custom_logo_id, 'full');
+    ?>
     <div id="page" class="site">
-        <header id="masthead" class="site-header">
-            <div class="site-branding">
-                <?php
-                the_custom_logo();
-                if (is_front_page() && is_home()) :
-                ?>
-                    <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
-                <?php
-                else :
-                ?>
-                    <p class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></p>
-                <?php
-                endif;
-                $starter_description = get_bloginfo('description', 'display');
-                if ($starter_description || is_customize_preview()) :
-                ?>
-                    <p class="site-description"><?php echo $starter_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
-                                                ?></p>
-                <?php endif; ?>
-            </div><!-- .site-branding -->
+        <header id="masthead" class="site-header px-side-padding-desktop pb-[1.3rem] flex justify-between items-start fixed left-0 top-0 right-0 z-50 <?php echo $userLoggedIn ? 'mt-[32px]' : ''; ?>">
+            <a href="<?= home_url(); ?>" class="logo-wrapper d-block w-[18.2rem] h-[6.7rem]">
+                <img src="<?= $logoUrl[0]; ?>" alt="<?= get_bloginfo(); ?>" class="full-size-img full-size-img-contain d-block">
+            </a>
 
             <nav id="site-navigation" class="main-navigation">
-                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Primary Menu', 'starter'); ?></button>
                 <?php
                 wp_nav_menu(
                     array(
