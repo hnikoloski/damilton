@@ -25,7 +25,7 @@
     ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class('bg-dark'); ?>>
     <?php wp_body_open();
     // require('template-parts/preloader.php');
     $custom_logo_id = get_theme_mod('custom_logo');

@@ -43,6 +43,9 @@ module.exports = {
       white: '#ffffff',
       black: '#000000',
       beige: '#F9DCBC',
+      brightBeige: '#F4F0EA',
+      dark: '#292A2C',
+      lime: '#799410'
     },
   },
   plugins: [],
