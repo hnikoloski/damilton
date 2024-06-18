@@ -43,6 +43,17 @@ function register_acf_block_types()
         'icon'              => 'admin-comments',
         'keywords'          => array('content', 'row'),
     ));
+
+    // Partners Ribbon Block
+    acf_register_block_type(array(
+        'name'              => 'partners-ribbon',
+        'title'             => __('Partners Ribbon'),
+        'description'       => __('A custom partners ribbon block.'),
+        'render_template'   => 'template-parts/blocks/partners-ribbon.php',
+        'category'          => 'kd',
+        'icon'              => 'admin-comments',
+        'keywords'          => array('partners', 'ribbon'),
+    ));
 }
 
 // Check if ACF is active

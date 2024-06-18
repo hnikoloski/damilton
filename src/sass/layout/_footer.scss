@@ -1,0 +1,17 @@
+footer.site-footer {
+    position: relative;
+
+    &::before {
+        content: "";
+        background: var(--background-image);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: calc(100% + 29.3rem);
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        z-index: -1;
+    }
+}

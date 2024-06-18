@@ -32,7 +32,7 @@
     $logoUrl = wp_get_attachment_image_src($custom_logo_id, 'full');
     ?>
     <div id="page" class="site">
-        <header id="masthead" class="site-header px-side-padding-desktop pb-[1.3rem] flex justify-between items-start fixed left-0 top-0 right-0 z-50 <?php echo $userLoggedIn ? 'mt-[32px]' : ''; ?>">
+        <header id="masthead" class="site-header px-side-padding-mobile lg:px-side-padding-desktop pb-[1.3rem] flex justify-between items-start fixed left-0 top-0 right-0 z-50 <?php echo $userLoggedIn ? 'mt-[32px]' : ''; ?>">
             <a href="<?= home_url(); ?>" class="logo-wrapper d-block w-[18.2rem] h-[6.7rem]">
                 <img src="<?= $logoUrl[0]; ?>" alt="<?= get_bloginfo(); ?>" class="full-size-img full-size-img-contain d-block">
             </a>

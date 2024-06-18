@@ -30,10 +30,15 @@ module.exports = {
             transform: 'translateX(calc(-100% - 3rem))',
           },
         },
+        'infinite-scroll': {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-100%)' },
+        }
       },
       animation: {
         ribbonAnim: 'ribbonAnim 20s linear infinite',
         ribbonMobileAnim: 'ribbonMobileAnim 20s linear infinite',
+        'infinite-scroll': 'infinite-scroll 25s linear infinite',
       },
 
     },
