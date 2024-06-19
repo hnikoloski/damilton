@@ -54,6 +54,17 @@ function register_acf_block_types()
         'icon'              => 'admin-comments',
         'keywords'          => array('partners', 'ribbon'),
     ));
+
+    // Cta Section Block
+    acf_register_block_type(array(
+        'name'              => 'cta-section',
+        'title'             => __('CTA Section'),
+        'description'       => __('A custom CTA section block.'),
+        'render_template'   => 'template-parts/blocks/cta-section.php',
+        'category'          => 'kd',
+        'icon'              => 'admin-comments',
+        'keywords'          => array('cta', 'section'),
+    ));
 }
 
 // Check if ACF is active

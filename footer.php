@@ -2,30 +2,61 @@
 $footerBg = get_field('footer_background_image', 'option');
 ?>
 <footer id="colophon" class="site-footer" style="--background-image: url('<?php echo $footerBg; ?>'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-    <div class="site-info lg:pt-[3.5rem] lg:pb-[45.6rem] px-side-padding-mobile lg:px-side-padding-desktop">
+    <div class="site-info pt-[4rem] lg:pt-[3.5rem] pb-[19.4rem] lg:pb-[45.6rem] px-side-padding-mobile lg:px-side-padding-desktop">
         <div class="h-[1px] bg-[#909090] w-full"></div>
-        <div class="flex justify-end items-center mt-[3.5rem]">
-            <ul class="socials">
-                <li class="mb-[2rem]">
-                    <a href="<?php echo get_field('facebook', 'option'); ?>" class="social-link text-beige hover:text-white text-[1.4rem] leading-none font-semibold uppercase">
-                        Facebook
-                    </a>
-                </li>
-                <li class="mb-[2rem]">
-                    <a href="<?php echo get_field('twitter', 'option'); ?>" class="social-link text-beige hover:text-white text-[1.4rem] leading-none font-semibold uppercase">
-                        Twitter
-                    </a>
-                </li>
-                <li class="mb-[2rem]">
-                    <a href="<?php echo get_field('instagram', 'option'); ?>" class="social-link text-beige hover:text-white text-[1.4rem] leading-none font-semibold uppercase">
-                        Instagram
-                    </a>
-                </li>
-            </ul>
+        <div class="menus flex flex-wrap flex-row justify-between items-center py-[3.5rem] lg:py-[4.8rem]">
+            <div class="menu-col flex flex-row justify-between items-center gap-[4.8rem] lg:gap-[5.6rem] w-full lg:w-auto">
+                <?php
+                wp_nav_menu(
+                    array(
+                        'theme_location' => 'menu-2',
+                        'menu_id'        => 'footer-menu-1',
+                        'menu_class'     => 'footer-menu',
+                        'container'      => '',
+                    )
+                );
+                wp_nav_menu(
+                    array(
+                        'theme_location' => 'menu-3',
+                        'menu_id'        => 'footer-menu-2',
+                        'menu_class'     => 'footer-menu',
+                        'container'      => '',
+                    )
+                );
+                wp_nav_menu(
+                    array(
+                        'theme_location' => 'menu-4',
+                        'menu_id'        => 'footer-menu-3',
+                        'menu_class'     => 'footer-menu',
+                        'container'      => '',
+                    )
+                );
+                ?>
+            </div>
+            <div class="flex justify-end items-center mt-[3.5rem] w-full lg:w-auto">
+                <ul class="socials flex flex-row justify-between items-center gap-[4.8rem] lg:gap-[2rem] w-full lg:w-auto">
+                    <li>
+                        <a href="<?php echo get_field('facebook', 'option'); ?>" class="social-link text-beige hover:text-white text-[1.4rem] leading-none font-semibold uppercase">
+                            Facebook
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?php echo get_field('twitter', 'option'); ?>" class="social-link text-beige hover:text-white text-[1.4rem] leading-none font-semibold uppercase">
+                            Twitter
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?php echo get_field('instagram', 'option'); ?>" class="social-link text-beige hover:text-white text-[1.4rem] leading-none font-semibold uppercase">
+                            Instagram
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
+
     </div><!-- .site-info -->
     <div class="copy-bar px-side-padding-mobile lg:px-side-padding-desktop bg-[rgba(20,19,17,0.7)]">
-        <div class="flex justify-end items-center py-[1.4rem]">
+        <div class="flex justify-center items-center py-[1rem] lg:py-[1.4rem] lg:justify-end">
             <p class="text-[#909090] text-[0.8rem] leading-none text-[1.4rem] text-[#B7AB99]">© 2024 Damilton, All Rights Reserved</p>
         </div>
     </div>
