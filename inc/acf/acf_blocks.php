@@ -65,6 +65,17 @@ function register_acf_block_types()
         'icon'              => 'admin-comments',
         'keywords'          => array('cta', 'section'),
     ));
+
+    // Categories slider block
+    acf_register_block_type(array(
+        'name'              => 'categories-slider',
+        'title'             => __('Categories Slider'),
+        'description'       => __('A custom categories slider block.'),
+        'render_template'   => 'template-parts/blocks/categories-slider.php',
+        'category'          => 'kd',
+        'icon'              => 'admin-comments',
+        'keywords'          => array('categories', 'slider'),
+    ));
 }
 
 // Check if ACF is active

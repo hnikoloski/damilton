@@ -1,0 +1,13 @@
+.kd-cta-section-block {
+    background: var(--bg-url);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @media only screen and (max-width: 768px) {
+        background: var(--bg-mob-url);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
