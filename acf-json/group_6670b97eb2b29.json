@@ -51,10 +51,10 @@
             "sub_fields": [
                 {
                     "key": "field_6670b9cf9c8bf",
-                    "label": "",
-                    "name": "",
+                    "label": "Dot position left",
+                    "name": "dot_position_left",
                     "aria-label": "",
-                    "type": "text",
+                    "type": "number",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -64,8 +64,33 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "maxlength": "",
+                    "min": "",
+                    "max": "",
                     "placeholder": "",
+                    "step": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_6670b9aa9c8be"
+                },
+                {
+                    "key": "field_66831606dc9d5",
+                    "label": "Dot position top",
+                    "name": "dot_position_top",
+                    "aria-label": "",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "min": "",
+                    "max": "",
+                    "placeholder": "",
+                    "step": "",
                     "prepend": "",
                     "append": "",
                     "parent_repeater": "field_6670b9aa9c8be"
@@ -91,5 +116,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1718663782
+    "modified": 1719867101
 }
