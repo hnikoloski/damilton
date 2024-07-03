@@ -18,5 +18,22 @@ jQuery(document).ready(function ($) {
     //         $("#masthead").removeClass("sticky");
     //     }
     // });
+    const searchTrigger = $("#masthead #search-trigger");
+    const searchForm = $("#masthead .search-form");
+    const searchClose = $("#masthead .search-close");
+
+    $(searchTrigger).on("click", function (e) {
+        e.preventDefault();
+        $(searchTrigger).toggle();
+        $(searchForm).removeClass("hidden");
+    });
+
+    $(searchClose).on("click", function (e) {
+        e.preventDefault();
+        $(searchTrigger).toggle();
+        $(searchForm).addClass("hidden");
+    });
+
+
 
 });

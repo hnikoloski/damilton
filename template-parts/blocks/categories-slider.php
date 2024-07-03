@@ -22,6 +22,8 @@ $heading = get_field('heading');
 $woo_product_categories = get_terms(array(
     'taxonomy'   => 'product_cat',
     'hide_empty' => 0,
+    // Only parent categories
+    'parent'     => 0,
 ));
 
 ?>

@@ -200,3 +200,6 @@ if (defined('JETPACK__VERSION')) {
  * Acf blocks
  */
 require get_template_directory() . '/inc/acf/acf_blocks.php';
+
+// Api Endpoints
+require get_template_directory() . '/inc/api/init_api.php';
