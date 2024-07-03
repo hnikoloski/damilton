@@ -42,7 +42,7 @@ $bgImgUrl = esc_url($bgImg);
             }
             $arrow_right_path = get_template_directory_uri() . '/assets/icons/arrow--right.svg';
     ?>
-            <div class="kd-hero-block__dot__wrapper absolute" style="left: <?php echo $dot_position_left; ?>rem; top: <?php echo $dot_position_top; ?>rem;">
+            <div class="kd-hero-block__dot__wrapper absolute hidden lg:block" style="left: <?php echo $dot_position_left; ?>rem; top: <?php echo $dot_position_top; ?>rem;">
                 <div class="kd-hero-block__dot__trigger absolute w-[1.4rem] h-[1.4rem] rounded-full flex items-center justify-center border-solid border-2 border-beige z-10 cursor-pointer hover:scale-110 transition-transform duration-300 ease-in-out">
                     <span class="w-[.8rem] h-[.8rem] bg-beige rounded-full block"></span>
                 </div>
