@@ -11,7 +11,15 @@ jQuery(document).ready(function ($) {
         searchInput = $('#masthead .search-form input');
     }
 
-    searchInput.on('keyup', function () {
+    function debounce(func, wait) {
+        let timeout;
+        return function (...args) {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func.apply(this, args), wait);
+        };
+    }
+
+    function handleSearch() {
         let searchValue = $(this).val();
         searchInput.removeClass('has-results');
         if (searchValue.length > 2) {
@@ -57,9 +65,6 @@ jQuery(document).ready(function ($) {
                         let productUrl = $(this).attr('data-href');
 
                         window.location.href = productUrl;
-
-
-
                     });
                 })
                 .catch(function (error) {
@@ -68,7 +73,11 @@ jQuery(document).ready(function ($) {
         } else {
             searchInput.parent().find('.search-results').remove();
         }
-    });
+    }
+
+    const debouncedHandleSearch = debounce(handleSearch, 400);
+
+    searchInput.on('keyup', debouncedHandleSearch);
 
     searchInput.on('change', function () {
         let searchValue = $(this).val();
