@@ -147,6 +147,26 @@
                 "id": ""
             },
             "return_format": "array"
+        },
+        {
+            "key": "field_669e40dff989f",
+            "label": "Remove Top spacing on second column",
+            "name": "remove_top_spacing_on_second_column",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
         }
     ],
     "location": [
@@ -167,5 +187,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1720031844
+    "modified": 1721647382
 }

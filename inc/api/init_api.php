@@ -12,6 +12,13 @@ add_action('rest_api_init', function () use ($nameSpace) {
         'callback' => 'auto_complete_search',
         'permission_callback' => '__return_true'
     ));
+
+    // Get products endpoint
+    register_rest_route($nameSpace, '/get-products', array(
+        'methods' => 'GET',
+        'callback' => 'get_products',
+        'permission_callback' => '__return_true'
+    ));
 });
 
 

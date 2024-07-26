@@ -81,6 +81,7 @@ jQuery(document).ready(function ($) {
 
     searchInput.on('change', function () {
         let searchValue = $(this).val();
+        // console.log('searchValue:', searchValue);
         if (searchValue.length < 3) {
             searchInput.parent().find('.search-results').remove();
         }

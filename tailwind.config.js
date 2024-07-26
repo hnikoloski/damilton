@@ -49,6 +49,7 @@ module.exports = {
       black: '#000000',
       beige: '#F9DCBC',
       brightBeige: '#F4F0EA',
+      brown: '#42210B',
       dark: '#292A2C',
       lime: '#799410'
     },

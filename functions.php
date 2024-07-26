@@ -167,7 +167,7 @@ function admin_style()
     wp_register_style('admin-styles', get_template_directory_uri() . '/dist/css/app.css');
     wp_enqueue_style('admin-styles');
 }
-// add_action('admin_enqueue_scripts', 'admin_style');
+add_action('admin_enqueue_scripts', 'admin_style');
 
 /**
  * Implement the Custom Header feature.
@@ -203,3 +203,18 @@ require get_template_directory() . '/inc/acf/acf_blocks.php';
 
 // Api Endpoints
 require get_template_directory() . '/inc/api/init_api.php';
+
+// custom image size for products
+add_image_size('product', 368, 368, true);
+// Ensure the custom size is available in the REST API
+add_filter('wp_prepare_attachment_for_js', function ($response, $attachment, $meta) {
+    if (isset($meta['sizes']['product'])) {
+        $response['sizes']['product'] = array(
+            'url' => $meta['sizes']['product']['url'],
+            'width' => $meta['sizes']['product']['width'],
+            'height' => $meta['sizes']['product']['height'],
+            'orientation' => $meta['sizes']['product']['width'] > $meta['sizes']['product']['height'] ? 'landscape' : 'portrait',
+        );
+    }
+    return $response;
+}, 10, 3);

@@ -23,6 +23,7 @@ $sub_heading = get_field('sub_heading');
 $highlighted_texts = get_field('highlighted_text');
 $description = get_field('description');
 $about_us_link = get_field('about_us_link');
+$remove_top_spacing_on_second_column = get_field('remove_top_spacing_on_second_column');
 ?>
 
 <div <?php echo $anchor; ?> class="<?php echo esc_attr($class_name); ?> py-[3.7rem] px-side-padding-mobile lg:px-side-padding-desktop">
@@ -40,7 +41,13 @@ $about_us_link = get_field('about_us_link');
                 <?php endif; ?>
             </p>
         </div>
-        <div class="w-full lg:w-1/3 lg:pl-[4.8rem] pt-[6.5rem]">
+        <div class="w-full lg:w-1/3 lg:pl-[4.8rem] <?php
+                                                    if ($remove_top_spacing_on_second_column) {
+                                                        echo ' pt-0';
+                                                    } else {
+                                                        echo ' pt-[6.5rem]';
+                                                    }
+                                                    ?>">
             <p class="text-beige text-[1.6rem] leading-[1.5]"><?php echo esc_html($description); ?></p>
             <?php if ($about_us_link) :
                 $arrow_right_path = get_template_directory_uri() . '/assets/icons/arrow--right.svg';

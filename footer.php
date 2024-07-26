@@ -35,21 +35,27 @@ $footerBg = get_field('footer_background_image', 'option');
             </div>
             <div class="flex justify-end items-center mt-[3.5rem] w-full lg:w-auto">
                 <ul class="socials flex flex-row justify-between items-center gap-[4.8rem] lg:gap-[2rem] w-full lg:w-auto">
-                    <li>
-                        <a href="<?php echo get_field('facebook', 'option'); ?>" class="social-link text-beige hover:text-white text-[1.4rem] leading-none font-semibold uppercase">
-                            Facebook
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?php echo get_field('twitter', 'option'); ?>" class="social-link text-beige hover:text-white text-[1.4rem] leading-none font-semibold uppercase">
-                            Twitter
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?php echo get_field('instagram', 'option'); ?>" class="social-link text-beige hover:text-white text-[1.4rem] leading-none font-semibold uppercase">
-                            Instagram
-                        </a>
-                    </li>
+                    <?php if (get_field('facebook', 'option')) : ?>
+                        <li>
+                            <a href="<?php echo get_field('facebook', 'option'); ?>" class="social-link text-beige hover:text-white text-[1.4rem] leading-none font-semibold uppercase">
+                                Facebook
+                            </a>
+                        </li>
+                    <?php endif; ?>
+                    <?php if (get_field('twitter', 'option')) : ?>
+                        <li>
+                            <a href="<?php echo get_field('twitter', 'option'); ?>" class="social-link text-beige hover:text-white text-[1.4rem] leading-none font-semibold uppercase">
+                                Twitter
+                            </a>
+                        </li>
+                    <?php endif; ?>
+                    <?php if (get_field('instagram', 'option')) : ?>
+                        <li>
+                            <a href="<?php echo get_field('instagram', 'option'); ?>" class="social-link text-beige hover:text-white text-[1.4rem] leading-none font-semibold uppercase">
+                                Instagram
+                            </a>
+                        </li>
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>
