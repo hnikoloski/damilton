@@ -76,6 +76,17 @@ function register_acf_block_types()
         'icon'              => 'admin-comments',
         'keywords'          => array('categories', 'slider'),
     ));
+
+    // Cards section block
+    acf_register_block_type(array(
+        'name'              => 'cards-section',
+        'title'             => __('Cards Section'),
+        'description'       => __('A custom cards section block.'),
+        'render_template'   => 'template-parts/blocks/cards-section.php',
+        'category'          => 'kd',
+        'icon'              => 'admin-comments',
+        'keywords'          => array('cards', 'section'),
+    ));
 }
 
 // Check if ACF is active

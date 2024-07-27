@@ -41,7 +41,7 @@ get_header();
                         <?php
                         foreach ($all_image_urls as $url) {
                         ?>
-                            <div class="swiper-slide !w-[12rem] !h-[12rem]">
+                            <div class="swiper-slide !w-[12rem]">
                                 <img src="<?php echo $url; ?>" alt="Product Image" class="!w-full !h-full object-cover">
                             </div>
                         <?php

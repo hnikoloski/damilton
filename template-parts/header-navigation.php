@@ -1,6 +1,6 @@
 <div class="fixed top-0 left-0 w-full h-screen bg-brown z-[2048] flex flex-wrap transition-all duration-300 ease-in-out transform -translate-y-[200%]" id="menu-overlay-wrap">
     <!-- flex direction column space between -->
-    <div class="w-[43.2rem] bg-[#331603] px-[12rem] py-[3.2rem] flex flex-col justify-between">
+    <div class="w-[43.2rem] bg-[#331603] px-[12rem] pt-[3.2rem] pb-[4.8rem] flex flex-col justify-between">
         <?php
         $header_small_logo = get_field('header_small_logo', 'option');
         ?>
@@ -22,7 +22,7 @@
         </div>
     </div>
     <div class="w-[calc(100%-43.2rem)] pt-[1.6rem] pb-[4.8rem] pl-[5.6rem] pr-[12rem] relative max-h-full overflow-y-auto">
-        <div class="flex items-center justify-between mb-[5.5rem]">
+        <div class="flex items-center justify-between mb-[3rem]">
             <p class="text-[#9D755A] text-[1.6rem] font-semibold tracking-[0.1rem]">
                 <?php pll_e('Navigation', 'starter'); ?></p>
             <div class="flex items-center">

@@ -106,7 +106,7 @@
 
     .menu-trigger {
         &__line {
-            @apply bg-brown rounded-[5px] h-[2px] absolute transition-all duration-300;
+            @apply bg-brown rounded-[5px] absolute transition-all duration-300 border-[1px] border-solid border-brown;
         }
 
         &:hover {
