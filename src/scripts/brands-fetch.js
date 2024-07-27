@@ -12,7 +12,7 @@ jQuery(document).ready(function ($) {
                 <div class="flex flex-wrap p-[1.2rem] h-full">
                     <div class="w-full lg:w-1/2 pr-[2.4rem] pt-[2.8rem] pl-[1.2rem] pb-[1.2rem] order-2 lg:order-1">
                         <img src="${brand.logo}" alt="${brand.title}" class="w-auto h-[3.6rem] mb-[2.4rem] object-contain" />
-                        <div class="text-[#F4F0EA] text-[1.4rem] leading-[1.2] mb-[6rem]">
+                        <div class="text-[#F4F0EA] text-[1.4rem] leading-[1.2] mb-[6rem] brand-description">
                             ${brand.description}
                         </div>
                         <a href="${brand.link}" target="_blank" rel="noopener noreferrer" class="group flex items-center text-white rounded-[100px] pl-[2.4rem] pr-[6rem] py-[0.8rem] font-medium text-[1.4rem] cursor-pointer border border-solid border-beige bg-transparent transition-all duration-300 mb-[0.8rem] relative w-[fit-content]">

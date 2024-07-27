@@ -1,9 +1,9 @@
 {
-    "key": "group_669e587b1b0f3",
-    "title": "Inner Hero",
+    "key": "group_66a4dca54cb32",
+    "title": "Inner Hero Catalogues",
     "fields": [
         {
-            "key": "field_669e587b9a7ff",
+            "key": "field_66a4dca556805",
             "label": "Background Image",
             "name": "background_image",
             "aria-label": "",
@@ -28,7 +28,7 @@
             "preview_size": "medium"
         },
         {
-            "key": "field_669e59089a800",
+            "key": "field_66a4dca55a2c2",
             "label": "Title",
             "name": "title",
             "aria-label": "",
@@ -48,7 +48,7 @@
             "new_lines": "br"
         },
         {
-            "key": "field_669e591c9a801",
+            "key": "field_66a4dca55de26",
             "label": "Title Tag",
             "name": "title_tag",
             "aria-label": "",
@@ -78,16 +78,9 @@
     "location": [
         [
             {
-                "param": "page_template",
-                "operator": "==",
-                "value": "template-products.php"
-            }
-        ],
-        [
-            {
                 "param": "options_page",
                 "operator": "==",
-                "value": "brands-archive-settings"
+                "value": "catalogues-archive-settings"
             }
         ]
     ],
@@ -100,5 +93,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1722080444
+    "modified": 1722080468
 }

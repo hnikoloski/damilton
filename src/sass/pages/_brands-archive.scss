@@ -1,0 +1,9 @@
+.brands-results {
+    .brand-description {
+        p {
+            &:not(:last-of-type) {
+                margin-bottom: 1.6rem
+            }
+        }
+    }
+}

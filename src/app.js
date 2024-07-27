@@ -6,3 +6,4 @@ import "./scripts/blocks/hero-block";
 import "./scripts/blocks/categories-slider";
 import "./scripts/single-product";
 import "./scripts/brands-fetch";
+import "./scripts/sliders";
