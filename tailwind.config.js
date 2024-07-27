@@ -40,7 +40,9 @@ module.exports = {
         ribbonMobileAnim: 'ribbonMobileAnim 20s linear infinite',
         'infinite-scroll': 'infinite-scroll 25s linear infinite',
       },
-
+      boxShadow: {
+        'loadShadow': '0px 10px 20px rgba(0, 0, 0, 0.2)',
+      },
     },
     colors: {
       transparent: 'transparent',

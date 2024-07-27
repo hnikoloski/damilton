@@ -4,7 +4,7 @@
     "menu_order": 0,
     "active": true,
     "post_type": "brand",
-    "advanced_configuration": false,
+    "advanced_configuration": true,
     "import_source": "",
     "import_date": "",
     "labels": {
@@ -66,13 +66,13 @@
     "plural_capability_name": "posts",
     "supports": [
         "title",
-        "editor",
+        "excerpt",
         "thumbnail",
         "custom-fields"
     ],
     "taxonomies": "",
-    "has_archive": false,
-    "has_archive_slug": "",
+    "has_archive": true,
+    "has_archive_slug": "brand",
     "rewrite": {
         "permalink_rewrite": "post_type_key",
         "with_front": "1",
@@ -85,5 +85,5 @@
     "delete_with_user": false,
     "register_meta_box_cb": "",
     "enter_title_here": "",
-    "modified": 1721655813
+    "modified": 1722074185
 }

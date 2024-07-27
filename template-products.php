@@ -52,7 +52,9 @@ $brands = get_posts(array(
         <div class="products-filters__dropdowns flex ml-auto space-x-[1.6rem] mt-[3.2rem] lg:mt-0">
             <div class="products-filters__dropdown">
                 <select class="products-filters__brand text-white rounded-[100px] pl-[2.4rem] pr-[6rem] py-[0.8rem] font-medium text-[1.4rem] cursor-pointer border border-solid border-beige bg-transparent transition-all duration-300 mb-[0.8rem]">
-                    <option selected disabled class="hidden">Select Brand</option>
+                    <option selected disabled class="hidden">
+                        <?php pll_e('Select Brand'); ?>
+                    </option>
                     <?php foreach ($brands as $brand) : ?>
                         <option value="<?php echo $brand->ID; ?>"><?php echo $brand->post_title; ?></option>
                     <?php endforeach; ?>
@@ -60,10 +62,18 @@ $brands = get_posts(array(
             </div>
             <div class="products-filters__dropdown">
                 <select class="products-filters__sort text-white rounded-[100px] pl-[2.4rem] pr-[6rem] py-[0.8rem] font-medium text-[1.4rem] cursor-pointer border border-solid border-beige bg-transparent transition-all duration-300 mb-[0.8rem]">
-                    <option selected disabled class="hidden">Sort by</option>
-                    <option value="date">Date</option>
-                    <option value="a-z">A-Z</option>
-                    <option value="z-a">Z-A</option>
+                    <option selected disabled class="hidden">
+                        <?php pll_e('Sort By'); ?>
+                    </option>
+                    <option value="date">
+                        <?php pll_e('Date'); ?>
+                    </option>
+                    <option value="a-z">
+                        <?php pll_e('A-Z'); ?>
+                    </option>
+                    <option value="z-a">
+                        <?php pll_e('Z-A'); ?>
+                    </option>
                 </select>
             </div>
         </div>

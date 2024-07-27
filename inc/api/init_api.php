@@ -19,6 +19,13 @@ add_action('rest_api_init', function () use ($nameSpace) {
         'callback' => 'get_products',
         'permission_callback' => '__return_true'
     ));
+
+    // Get brands endpoint
+    register_rest_route($nameSpace, '/get-brands', array(
+        'methods' => 'GET',
+        'callback' => 'get_brands',
+        'permission_callback' => '__return_true'
+    ));
 });
 
 

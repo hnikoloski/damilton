@@ -1,11 +1,11 @@
 {
-    "key": "group_669e587b1b0f3",
-    "title": "Inner Hero",
+    "key": "group_66a4c1f92bb0a",
+    "title": "Brands",
     "fields": [
         {
-            "key": "field_669e587b9a7ff",
-            "label": "Background Image",
-            "name": "background_image",
+            "key": "field_66a4c1fa4cda4",
+            "label": "Brand Logo",
+            "name": "brand_logo",
             "aria-label": "",
             "type": "image",
             "instructions": "",
@@ -28,11 +28,31 @@
             "preview_size": "medium"
         },
         {
-            "key": "field_669e59089a800",
-            "label": "Title",
-            "name": "title",
+            "key": "field_66a4c2244cda5",
+            "label": "Description",
+            "name": "description",
             "aria-label": "",
-            "type": "textarea",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_66a4c24791139",
+            "label": "Brand Link",
+            "name": "brand_link",
+            "aria-label": "",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -43,51 +63,17 @@
             },
             "default_value": "",
             "maxlength": "",
-            "rows": 3,
             "placeholder": "",
-            "new_lines": "br"
-        },
-        {
-            "key": "field_669e591c9a801",
-            "label": "Title Tag",
-            "name": "title_tag",
-            "aria-label": "",
-            "type": "button_group",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "h1": "H1",
-                "h2": "H2",
-                "h3": "H3",
-                "h4": "H4",
-                "h5": "H5",
-                "h6": "H6"
-            },
-            "default_value": "h2",
-            "return_format": "value",
-            "allow_null": 0,
-            "layout": "horizontal"
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
         [
             {
-                "param": "page_template",
+                "param": "post_type",
                 "operator": "==",
-                "value": "template-products.php"
-            }
-        ],
-        [
-            {
-                "param": "options_page",
-                "operator": "==",
-                "value": "brands-archive-settings"
+                "value": "brand"
             }
         ]
     ],
@@ -100,5 +86,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1722073957
+    "modified": 1722073696
 }

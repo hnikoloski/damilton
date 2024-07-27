@@ -11,8 +11,8 @@
 get_header();
 ?>
 <div class="px-side-padding-mobile lg:px-side-padding-desktop pt-[19.2rem]">
-    <div class="single-product__content flex ">
-        <div class="single-product__content__gallery flex flex-wrap w-full lg:w-[70rem] h-[55.2rem]">
+    <div class="single-product__content block lg:flex ">
+        <div class="single-product__content__gallery flex flex-wrap w-full lg:w-[70rem] lg:h-[55.2rem]">
             <?php
             $product_image = get_the_post_thumbnail_url();
             $product_image_gallery = get_post_meta(get_the_ID(), '_product_image_gallery', true);
@@ -36,12 +36,12 @@ get_header();
             }
 
             if (!empty($all_image_urls)) { ?>
-                <div class="product-slider-thumbs swiper w-[12rem] max-h-full" thumbsSlider="">
+                <div class="product-slider-thumbs swiper order-2 lg:order-1 lg:w-[12rem] mt-[0.8rem] lg:mt-0 max-h-full" thumbsSlider="">
                     <div class="swiper-wrapper">
                         <?php
                         foreach ($all_image_urls as $url) {
                         ?>
-                            <div class="swiper-slide !w-[12rem]">
+                            <div class="swiper-slide lg:!w-[12rem]">
                                 <img src="<?php echo $url; ?>" alt="Product Image" class="!w-full !h-full object-cover">
                             </div>
                         <?php
@@ -49,12 +49,12 @@ get_header();
                         ?>
                     </div>
                 </div>
-                <div class="product-slider swiper w-[calc(100%-12rem-2.4rem)] h-full">
+                <div class="product-slider swiper w-full order-1 lg:order-2 lg:w-[calc(100%-12rem-2.4rem)] h-full">
                     <div class="swiper-wrapper">
                         <?php
                         foreach ($all_image_urls as $url) {
                         ?>
-                            <div class="swiper-slide">
+                            <div class="swiper-slide h-full lg:h-auto">
                                 <img src="<?php echo $url; ?>" alt="Product Image" class="!w-full !h-full object-cover">
                             </div>
                         <?php
@@ -71,7 +71,7 @@ get_header();
         </div>
 
         <div class="single-product__content__info w-full lg:w-[calc(100%-70rem)] lg:pl-[8.8rem]">
-            <h1 class="single-product__content__info__title text-beige font-semibold text-[3.6rem] leading-tight mb-[2.4rem]"><?php the_title(); ?></h1>
+            <h1 class="single-product__content__info__title text-beige font-semibold text-[3.6rem] leading-tight mb-[2.4rem] mt-[4rem] lg:mt-0"><?php the_title(); ?></h1>
             <?php
             // Description
             if (!empty(get_the_content())) {
@@ -80,15 +80,15 @@ get_header();
             <?php
             }
             ?>
-            <div class="my-[5rem] flex flex-wrap justify-between">
-                <a href="#techdetails" class="group flex items-center text-white rounded-[100px] pl-[2.4rem] pr-[6rem] py-[0.8rem] font-medium text-[1.4rem] cursor-pointer border border-solid border-beige bg-transparent transition-all duration-300 mb-[0.8rem] relative">
+            <div class="my-[5rem] flex flex-wrap justify-between flex-col lg:flex-row items-start lg:items-center">
+                <a href="#techdetails" class="group inline-block lg:flex items-center text-white rounded-[100px] pl-[2.4rem] pr-[6rem] py-[0.8rem] font-medium text-[1.4rem] cursor-pointer border border-solid border-beige bg-transparent transition-all duration-300 mb-[0.8rem] relative">
                     <?php
                     $arrowUrl = get_template_directory_uri() . '/assets/icons/arrow--right.svg';
                     ?>
                     <span><?php pll_e('Technical Details', 'starter'); ?></span>
                     <img src="<?php echo $arrowUrl; ?>" alt="Arrow Right" class="!w-[1.7rem] !h-[1.2rem] ml-[1.2rem] group-hover:ml-[1.4rem] transition-all duration-300 ease-in-out absolute -translate-y-1/2 right-[2.4rem] top-[50%] group-hover:right-[1.6rem]">
                 </a>
-                <a href="#ask-price" class="group flex items-center text-brown rounded-[100px] pl-[2.4rem] pr-[6rem] py-[0.8rem] font-medium text-[1.4rem] cursor-pointer border border-solid border-beige bg-beige transition-all duration-300 mb-[0.8rem] relative">
+                <a href="#ask-price" class="group inline-block lg:flex items-center text-brown rounded-[100px] pl-[2.4rem] pr-[6rem] py-[0.8rem] font-medium text-[1.4rem] cursor-pointer border border-solid border-beige bg-beige transition-all duration-300 mb-[0.8rem] relative">
                     <?php
                     $arrowUrl = get_template_directory_uri() . '/assets/icons/arrow--right--brown.svg';
                     ?>
@@ -145,7 +145,7 @@ get_header();
 
     if ($related_products) :
     ?>
-        <div class="related-products mt-[11.2rem]">
+        <div class="related-products mt-[7rem] lg:mt-[11.2rem]">
             <p class="text-brightBeige text-[1.6rem] relative before:absolute before:content-['/'] before:text-[1.6rem] before:text-brightBeige before:font-light before:leading-[1.375] before:top-[50%] before:transform before:-translate-y-1/2 before:left-0 pl-[1rem] leading-[1.375]">
                 <?php pll_e('Explore a few'); ?>
             </p>

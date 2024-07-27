@@ -9,7 +9,10 @@ jQuery(document).ready(function ($) {
     const productsSort = $('.products-filters__sort');
     const productsBrand = $('.products-filters__brand');
     const productsContainer = $('.filtered-products-container');
-
+    // Return if no products container
+    if (productsContainer.length === 0) {
+        return
+    }
     productsCategory.on('click', function () {
         if ($(this).hasClass('active')) {
             return;
