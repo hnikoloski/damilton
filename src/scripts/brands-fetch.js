@@ -8,7 +8,7 @@ jQuery(document).ready(function ($) {
     // Brand Card Component
     function brandCardComponent(brand) {
         return `
-            <div class="mb-[4.8rem] w-full lg:w-[calc(50%-4.8rem)] bg-[#313234] rounded-[20px] relative">
+            <div class="mb-[4.8rem] w-full lg:w-[calc(50%-2.4rem)] bg-[#313234] rounded-[20px] relative">
                 <div class="flex flex-wrap p-[1.2rem] h-full">
                     <div class="w-full lg:w-1/2 pr-[2.4rem] pt-[2.8rem] pl-[1.2rem] pb-[1.2rem] order-2 lg:order-1">
                         <img src="${brand.logo}" alt="${brand.title}" class="w-auto h-[3.6rem] mb-[2.4rem] object-contain" />
