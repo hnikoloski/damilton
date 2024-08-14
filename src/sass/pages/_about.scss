@@ -1,0 +1,41 @@
+.page-template-template-about {
+    .about-us-page-content {
+        &__column-content {
+            p {
+                @apply text-brightBeige text-[1.6rem];
+
+                &:not(:last-of-type) {
+                    @apply mb-[3.2rem];
+                }
+            }
+        }
+
+        &__ribbon-image-content {
+
+            &__top-content,
+            &__bottom-content {
+                @apply text-[1.6rem] text-brightBeige leading-[1.2];
+
+                span {
+                    @apply text-beige leading-[1] font-medium;
+                }
+            }
+
+            .ribbon-words {
+                .ribbon-word {
+                    position: relative;
+
+                    &::after {
+                        content: "•";
+                        position: absolute;
+                        top: 50%;
+                        text-align: center;
+                        right: -7rem;
+                        transform: translateY(-50%);
+                        @apply text-beige;
+                    }
+                }
+            }
+        }
+    }
+}

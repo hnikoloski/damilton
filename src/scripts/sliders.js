@@ -9,8 +9,8 @@ jQuery(document).ready(function ($) {
         const uniqueId = $(this).data('unique-id');
         new Swiper(`[data-unique-id="${uniqueId}"]`, {
             loop: true,
-            slidesPerView: 1,
-            spaceBetween: 10,
+            slidesPerView: 1.25,
+            spaceBetween: 48,
             breakpoints: {
                 640: {
                     slidesPerView: 2,
@@ -28,22 +28,23 @@ jQuery(document).ready(function ($) {
         });
     });
 
-    // Tooltip follows mouse cursor and replaces the cursor
-    $('.swiper-wrapper').on('mouseenter', function () {
-        const $dragMe = $(this).find('.drag-me');
-        $dragMe.removeClass('hidden').addClass('flex');
+    if ($(window).width() >= 1024) {
+        $('.swiper-wrapper').on('mouseenter', function () {
+            const $dragMe = $(this).find('.drag-me');
+            $dragMe.removeClass('hidden').addClass('flex');
 
-        $(this).on('mousemove', function (e) {
-            $dragMe.css({
-                top: `${e.pageY - $(this).offset().top}px`,
-                left: `${e.pageX - $(this).offset().left}px`
+            $(this).on('mousemove', function (e) {
+                $dragMe.css({
+                    top: `${e.pageY - $(this).offset().top}px`,
+                    left: `${e.pageX - $(this).offset().left}px`
+                });
             });
         });
-    });
 
-    $('.swiper-wrapper').on('mouseleave', function () {
-        const $dragMe = $(this).find('.drag-me');
-        $dragMe.removeClass('flex').addClass('hidden');
-        $(this).off('mousemove');
-    });
+        $('.swiper-wrapper').on('mouseleave', function () {
+            const $dragMe = $(this).find('.drag-me');
+            $dragMe.removeClass('flex').addClass('hidden');
+            $(this).off('mousemove');
+        });
+    }
 });

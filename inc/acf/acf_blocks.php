@@ -87,6 +87,40 @@ function register_acf_block_types()
         'icon'              => 'admin-comments',
         'keywords'          => array('cards', 'section'),
     ));
+
+    // Map Hero Block
+    acf_register_block_type(array(
+        'name'              => 'map-hero',
+        'title'             => __('Map Hero'),
+        'description'       => __('A custom map hero block.'),
+        'render_template'   => 'template-parts/blocks/map-hero.php',
+        'category'          => 'kd',
+        'icon'              => 'admin-comments',
+        'keywords'          => array('map', 'hero'),
+        'enqueue_script'    => 'https://maps.googleapis.com/maps/api/js?key=' . get_field('google_maps_api_key', 'option') . '&callback=initMap',
+    ));
+
+    // Contact Info Block
+    acf_register_block_type(array(
+        'name'              => 'contact-info',
+        'title'             => __('Contact Info'),
+        'description'       => __('A custom contact info block.'),
+        'render_template'   => 'template-parts/blocks/contact-info.php',
+        'category'          => 'kd',
+        'icon'              => 'admin-comments',
+        'keywords'          => array('contact', 'info'),
+    ));
+
+    // Contact Form Block
+    acf_register_block_type(array(
+        'name'              => 'contact-form',
+        'title'             => __('Contact Form'),
+        'description'       => __('A custom contact form block.'),
+        'render_template'   => 'template-parts/blocks/contact-form.php',
+        'category'          => 'kd',
+        'icon'              => 'admin-comments',
+        'keywords'          => array('contact', 'form'),
+    ));
 }
 
 // Check if ACF is active

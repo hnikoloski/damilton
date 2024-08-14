@@ -43,6 +43,14 @@ module.exports = {
       boxShadow: {
         'loadShadow': '0px 10px 20px rgba(0, 0, 0, 0.2)',
       },
+      dropShadow: {
+        'contact-image': [
+          '0px 264px 106px rgba(0, 0, 0, 0.02)',
+          '0px 148px 89px rgba(0, 0, 0, 0.08)',
+          '0px 66px 66px rgba(0, 0, 0, 0.14)',
+          '0px 16px 36px rgba(0, 0, 0, 0.16)',
+        ],
+      },
     },
     colors: {
       transparent: 'transparent',

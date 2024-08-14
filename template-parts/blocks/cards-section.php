@@ -10,7 +10,7 @@ if (!empty($block['anchor'])) {
 }
 
 // Create class attribute allowing for custom "className" and "align" values.
-$class_name = "kd-block kd-cards-section-block py-[3.7rem] lg:px-side-padding-desktop";
+$class_name = "kd-block kd-cards-section-block py-[3.7rem] px-side-padding-mobile lg:px-side-padding-desktop";
 if (!empty($block['className'])) {
     $class_name .= ' ' . $block['className'];
 }
@@ -49,7 +49,7 @@ $heading = get_field('heading');
                 $description = get_sub_field('description');
                 $link = get_sub_field('link');
             ?>
-                <div class="w-[calc(33%-4.8rem)] mb-[3.5rem] ">
+                <div class="w-full lg:w-[calc(33%-4.8rem)] mb-[3.5rem] ">
                     <?php if ($link) : ?>
                         <a href="<?= $link['url']; ?>" class="block">
                         <?php endif; ?>

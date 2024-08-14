@@ -1,6 +1,6 @@
-<div class="fixed top-0 left-0 w-full h-screen bg-brown z-[2048] flex flex-wrap transition-all duration-300 ease-in-out transform -translate-y-[200%]" id="menu-overlay-wrap">
+<div class="fixed top-0 left-0 w-full h-screen bg-brown z-[2048] flex flex-wrap transition-all duration-300 ease-in-out transform -translate-y-[200%] lg:max-h-[100svh] overflow-y-auto" id="menu-overlay-wrap">
     <!-- flex direction column space between -->
-    <div class="w-[43.2rem] bg-[#331603] px-[12rem] pt-[3.2rem] pb-[4.8rem] flex flex-col justify-between">
+    <div class="w-full lg:w-[43.2rem] bg-[#331603] px-[2.6rem] lg:px-[12rem] pt-[3.2rem] pb-[4.8rem] flex flex-col justify-between order-2 lg:order-1">
         <?php
         $header_small_logo = get_field('header_small_logo', 'option');
         ?>
@@ -21,7 +21,7 @@
             <a href="mailto:mail@damilton.com" class="text-beige text-[1.4rem] block hover:text-white transition-all duration-300 ease-in-out">mail@damilton.com →</a>
         </div>
     </div>
-    <div class="w-[calc(100%-43.2rem)] pt-[1.6rem] pb-[4.8rem] pl-[5.6rem] pr-[12rem] relative max-h-full overflow-y-auto">
+    <div class="w-full lg:w-[calc(100%-43.2rem)] pt-[1.6rem] pb-[4.8rem] pl-[2.6rem] lg:pl-[5.6rem] pr-[2.6rem] lg:pr-[12rem] relative lg:max-h-full lg:overflow-y-auto order-1 lg:order-2">
         <div class="flex items-center justify-between mb-[3rem]">
             <p class="text-[#9D755A] text-[1.6rem] font-semibold tracking-[0.1rem]">
                 <?php pll_e('Navigation', 'starter'); ?></p>
@@ -55,7 +55,7 @@
             $menu_items = wp_get_nav_menu_items($menu_id);
             if ($menu_items) {
                 $counter = 1;
-                echo '<ul class="menu-primary max-w-[calc(100%-20rem)]">';
+                echo '<ul class="menu-primary max-w-full lg:max-w-[calc(100%-20rem)]">';
                 foreach ($menu_items as $item) {
                     echo '<li class="menu-item">';
                     echo '<a href="' . esc_url($item->url) . '" class="menu-link text-beige text-[5.6rem] leading-snug pr-[2.4rem]">';
@@ -69,7 +69,7 @@
             }
         }
         ?>
-        <ul class="socials flex flex-row justify-between items-center gap-[4.8rem] lg:gap-[2rem] fixed right-[12rem] bottom-[4.8rem]">
+        <ul class="mt-[3.6rem] mt-0 socials flex flex-row lg:justify-between items-center gap-[1.6rem] lg:gap-[2rem] lg:fixed lg:right-[12rem] lg:bottom-[4.8rem]">
             <?php if (get_field('facebook', 'option')) : ?>
                 <li>
                     <a href="<?php echo get_field('facebook', 'option'); ?>" class="social-link w-[2.4rem] h-[2.4rem] block">

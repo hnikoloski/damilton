@@ -21,7 +21,7 @@ if (!empty($block['align'])) {
 
 <div <?php echo $anchor; ?> class="<?php echo esc_attr($class_name); ?> bg-no-repeat bg-cover bg-center my-[5rem] overflow-hidden">
     <?php if (have_rows('partner_logos')) : ?>
-        <div class="flex w-[200%] animate-ribbonMobileAnim md:animate-ribbonAnim">
+        <div class="flex w-[350%] lg:w-[200%] animate-ribbonMobileAnim md:animate-ribbonAnim">
             <ul class="flex items-center justify-evenly gap-[8rem] min-w-full">
                 <?php while (have_rows('partner_logos')) : the_row();
                     $logo = get_sub_field('partner_logo'); ?>
@@ -30,7 +30,7 @@ if (!empty($block['align'])) {
                     </li>
                 <?php endwhile; ?>
             </ul>
-            <ul class="flex items-center justify-evenly gap-[8rem] min-w-full">
+            <ul class="flex items-center justify-evenly gap-[8rem] min-w-full ml-[8rem]">
                 <?php while (have_rows('partner_logos')) : the_row();
                     $logo = get_sub_field('partner_logo'); ?>
                     <li class="w-auto h-[3.5rem]">

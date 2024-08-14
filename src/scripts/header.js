@@ -27,6 +27,11 @@ jQuery(document).ready(function ($) {
         $(searchTrigger).toggle();
         $(searchForm).removeClass("hidden").addClass("mr-4");
         $('#menu-trigger').hide();
+
+        // Check if mobile
+        if ($(window).width() < 769) {
+            $('#masthead .logo-wrapper').hide();
+        }
     });
 
     $(searchClose).on("click", function (e) {
@@ -34,6 +39,11 @@ jQuery(document).ready(function ($) {
         $(searchTrigger).toggle();
         $(searchForm).addClass("hidden").removeClass("mr-4");
         $('#menu-trigger').show();
+
+        // Check if mobile
+        if ($(window).width() < 769) {
+            $('#masthead .logo-wrapper').show();
+        }
     });
 
     const menuOverlayWrap = $("#menu-overlay-wrap");
@@ -63,5 +73,16 @@ jQuery(document).ready(function ($) {
 
     // Temporarily open the menu on load
     // $('#menu-trigger').trigger("click");
+    $('#current-lang').on('click', function () {
+        $(this).parent().toggleClass('rounded-b-[0]');
+        $('#lang-dropdown').toggleClass('scale-y-0');
+    });
 
+    // Close the dropdown if clicked outside
+    $(document).on('click', function (e) {
+        if (!$(e.target).closest('.lang-switcher').length) {
+            $('#current-lang').parent().removeClass('rounded-b-[0]');
+            $('#lang-dropdown').addClass('scale-y-0');
+        }
+    });
 });

@@ -10,3 +10,13 @@
 @import "./sass/layout/layout";
 @import "./sass/components/components";
 @import "./sass/pages/pages";
+
+.foogallery.foogallery-masonry {
+    @apply px-side-padding-mobile lg:px-side-padding-desktop;
+
+    @media (max-width: 1023px) {
+        .fg-item {
+            width: 100%;
+        }
+    }
+}

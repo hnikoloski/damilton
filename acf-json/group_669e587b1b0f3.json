@@ -89,6 +89,13 @@
                 "operator": "==",
                 "value": "brands-archive-settings"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-about.php"
+            }
         ]
     ],
     "menu_order": 0,
@@ -100,5 +107,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1722080444
+    "modified": 1723552605
 }

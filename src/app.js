@@ -4,6 +4,8 @@ import "./scripts/products-filtering";
 import "./scripts/search-auto-complete";
 import "./scripts/blocks/hero-block";
 import "./scripts/blocks/categories-slider";
+import "./scripts/blocks/map-hero-block";
+import "./scripts/blocks/contact-form-block";
 import "./scripts/single-product";
 import "./scripts/brands-fetch";
 import "./scripts/sliders";

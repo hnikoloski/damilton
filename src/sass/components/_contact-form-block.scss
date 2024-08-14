@@ -1,0 +1,73 @@
+.kd-contact-form-block {
+    &__image-wrapper {
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: -2.2rem;
+            top: -1.9rem;
+            width: 10.9rem;
+            height: 10.9rem;
+            background: url('../../assets/icons/star-icon.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            z-index: 24;
+        }
+    }
+
+    #contact-form {
+        position: relative;
+
+        &.loading {
+            &::after {
+                content: "";
+                position: absolute;
+                top: 30%;
+                left: calc(50% - 6rem);
+                transform: translate(-50%, -50%);
+                width: 12rem;
+                height: 12rem;
+                background: url("../../assets/icons/api-loader.svg");
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                z-index: 2048;
+                -webkit-animation: rotate-scale-down 1s linear infinite both;
+                animation: rotate-scale-down 1s linear infinite both;
+
+                @media (max-width: 768px) {
+                    left: calc(50% - 5rem);
+                }
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: #292a2c;
+                opacity: 0.8;
+                z-index: 1024;
+            }
+        }
+
+        .error-message {
+            @apply text-[#dc2626] text-sm;
+        }
+
+        .status-message {
+
+            &.success {
+                @apply text-[#22c55e];
+            }
+
+            &.error {
+                @apply text-[#dc2626];
+            }
+        }
+    }
+}

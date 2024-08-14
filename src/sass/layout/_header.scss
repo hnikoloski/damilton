@@ -136,8 +136,16 @@
                 &:hover {
                     padding-left: 8rem;
 
+                    @media (max-width: 1024px) {
+                        padding-left: 0;
+                    }
+
                     &::before {
                         width: 4.8rem;
+
+                        @media (max-width: 1024px) {
+                            width: 0;
+                        }
                     }
                 }
             }
