@@ -93,6 +93,54 @@
             ]
         },
         {
+            "key": "field_66bcc2d011ffd",
+            "label": "Full Width Highlighted Texts",
+            "name": "full_width_highlighted_texts",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_66bcc3bab3ca3",
+            "label": "Full Width Secondary Heading",
+            "name": "full_width_secondary_heading",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_66bcc2d011ffd",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "75",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_668594baf8a00",
             "label": "Subtitle Text",
             "name": "subtitle_text",
@@ -187,5 +235,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1721647382
+    "modified": 1723646964
 }

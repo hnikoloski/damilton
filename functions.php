@@ -226,26 +226,3 @@ function my_acf_google_map_api($api)
     return $api;
 }
 add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
-function convert_spacer_height_to_rem($block_content, $block)
-{
-    // Check if the block is a spacer
-    if ($block['blockName'] === 'core/spacer' && isset($block['attrs']['height'])) {
-        $height = $block['attrs']['height'];
-        // Check if the height is in pixels
-        if (strpos($height, 'px') !== false) {
-            // Convert px to rem (assuming 16px base font-size)
-            $px_value = intval($height);
-            $rem_value = $px_value / 16;
-
-            // Replace the height with the converted value in rem
-            $block_content = str_replace(
-                'height:' . $height,
-                'height:' . $rem_value . 'rem',
-                $block_content
-            );
-        }
-    }
-
-    return $block_content;
-}
-add_filter('render_block', 'convert_spacer_height_to_rem', 10, 2);

@@ -1,11 +1,12 @@
 <?php
 $footerBg = get_field('footer_background_image', 'option');
+$footerBgMobile = get_field('footer_background_image_mob', 'option');
 ?>
-<footer id="colophon" class="site-footer" style="--background-image: url('<?php echo $footerBg; ?>'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+<footer id="colophon" class="site-footer" style="--background-image: url('<?php echo $footerBg; ?>'); --background-image-mobile: url(<?php echo $footerBgMobile; ?>); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <div class="site-info pt-[4rem] lg:pt-[3.5rem] pb-[19.4rem] lg:pb-[45.6rem] px-side-padding-mobile lg:px-side-padding-desktop">
         <div class="h-[1px] bg-[#909090] w-full"></div>
         <div class="menus flex flex-wrap flex-row justify-between items-center py-[3.5rem] lg:py-[4.8rem]">
-            <div class="menu-col flex flex-row justify-between items-center gap-[4.8rem] lg:gap-[5.6rem] w-full lg:w-auto">
+            <div class="menu-col flex flex-row justify-between items-start lg:items-center gap-[4.8rem] lg:gap-[5.6rem] w-full lg:w-auto">
                 <?php
                 wp_nav_menu(
                     array(
@@ -34,7 +35,7 @@ $footerBg = get_field('footer_background_image', 'option');
                 ?>
             </div>
             <div class="flex justify-end items-center mt-[3.5rem] w-full lg:w-auto">
-                <ul class="socials flex flex-row justify-between items-center gap-[4.8rem] lg:gap-[2rem] w-full lg:w-auto">
+                <ul class="socials flex flex-row lg:flex-col justify-between items-center gap-[4.8rem] lg:gap-[2rem] w-full lg:w-auto">
                     <?php if (get_field('facebook', 'option')) : ?>
                         <li>
                             <a href="<?php echo get_field('facebook', 'option'); ?>" class="social-link text-beige hover:text-white text-[1.4rem] leading-none font-semibold uppercase">

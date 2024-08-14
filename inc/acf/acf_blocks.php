@@ -44,6 +44,17 @@ function register_acf_block_types()
         'keywords'          => array('content', 'row'),
     ));
 
+    // Simple Cards Block
+    acf_register_block_type(array(
+        'name'              => 'simple-cards',
+        'title'             => __('Simple Cards'),
+        'description'       => __('A custom simple cards block.'),
+        'render_template'   => 'template-parts/blocks/simple-cards.php',
+        'category'          => 'kd',
+        'icon'              => 'admin-comments',
+        'keywords'          => array('simple', 'cards'),
+    ));
+
     // Partners Ribbon Block
     acf_register_block_type(array(
         'name'              => 'partners-ribbon',

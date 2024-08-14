@@ -13,6 +13,20 @@ footer.site-footer {
         left: 0;
         position: absolute;
         z-index: -1;
+
+        @media screen and (max-width: 1024px) {
+            background: var(--background-image-mobile);
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: 150%;
+        }
+
+        @media screen and (max-width: 475px) {
+            background: var(--background-image-mobile);
+            background-position: 50% 110%;
+            background-repeat: no-repeat;
+            background-size: 150%;
+        }
     }
 
     .footer-menu {
