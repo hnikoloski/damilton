@@ -1,11 +1,11 @@
 {
-    "key": "group_669e587b1b0f3",
-    "title": "Inner Hero",
+    "key": "group_66bf63fca2bcc",
+    "title": "Inner Hero Promotions",
     "fields": [
         {
-            "key": "field_669e587b9a7ff",
+            "key": "field_66bf63fcb01cf",
             "label": "Background Image",
-            "name": "background_image",
+            "name": "background_image_promotion",
             "aria-label": "",
             "type": "image",
             "instructions": "",
@@ -28,9 +28,9 @@
             "preview_size": "medium"
         },
         {
-            "key": "field_669e59089a800",
+            "key": "field_66bf63fcb3c39",
             "label": "Title",
-            "name": "title",
+            "name": "title_promotion",
             "aria-label": "",
             "type": "textarea",
             "instructions": "",
@@ -48,9 +48,9 @@
             "new_lines": "br"
         },
         {
-            "key": "field_669e591c9a801",
+            "key": "field_66bf63fcb769c",
             "label": "Title Tag",
-            "name": "title_tag",
+            "name": "title_tag_promotion",
             "aria-label": "",
             "type": "button_group",
             "instructions": "",
@@ -78,16 +78,9 @@
     "location": [
         [
             {
-                "param": "page_template",
-                "operator": "==",
-                "value": "template-products.php"
-            }
-        ],
-        [
-            {
                 "param": "options_page",
                 "operator": "==",
-                "value": "brands-archive-settings"
+                "value": "promotions-archive-settings"
             }
         ]
     ],
@@ -100,5 +93,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1723818979
+    "modified": 1723819108
 }

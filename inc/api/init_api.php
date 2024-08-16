@@ -27,6 +27,13 @@ add_action('rest_api_init', function () use ($nameSpace) {
         'permission_callback' => '__return_true'
     ));
 
+    // Get Promotions
+    register_rest_route($nameSpace, '/get-promotions', array(
+        'methods' => 'GET',
+        'callback' => 'get_promotions',
+        'permission_callback' => '__return_true'
+    ));
+
     // Contact form
     register_rest_route($nameSpace, '/contact-form', array(
         'methods' => 'POST',

@@ -1,9 +1,16 @@
 <?php
 if (is_archive()) {
-    // Use option fields if on an archive page
-    $background_image = get_field('background_image', 'option');
-    $title = get_field('title', 'option');
-    $title_tag = get_field('title_tag', 'option');
+    // Check if we are on the promotion archive page
+    if (is_post_type_archive('promotion')) {
+        $background_image = get_field('background_image_promotion', 'option');
+        $title = get_field('title_promotion', 'option');
+        $title_tag = get_field('title_tag_promotion', 'option');
+    } else {
+        // Use option fields if on an archive page
+        $background_image = get_field('background_image', 'option');
+        $title = get_field('title', 'option');
+        $title_tag = get_field('title_tag', 'option');
+    }
 } else {
     // Use page-specific fields
     $page_id = get_the_ID();

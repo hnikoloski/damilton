@@ -167,7 +167,7 @@ function admin_style()
     wp_register_style('admin-styles', get_template_directory_uri() . '/dist/css/app.css');
     wp_enqueue_style('admin-styles');
 }
-add_action('admin_enqueue_scripts', 'admin_style');
+// add_action('admin_enqueue_scripts', 'admin_style');
 
 /**
  * Implement the Custom Header feature.
