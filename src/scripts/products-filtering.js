@@ -24,18 +24,35 @@ jQuery(document).ready(function ($) {
         $(this).removeClass('text-white bg-transparent hover:bg-beige hover:text-brown');
 
         $('.products-filters__params').find('input[name="category"]').val(category);
+
+        // If promo_products is set, remove it from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const promoProducts = urlParams.get('promo_products');
+        if (promoProducts) {
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
+
         fetchProducts();
     });
 
     productsSort.on('change', function () {
         let sort = $(this).val();
         $('.products-filters__params').find('input[name="sort"]').val(sort);
+
+
         fetchProducts();
     });
 
     productsBrand.on('change', function () {
         let brand = $(this).val();
         $('.products-filters__params').find('input[name="brand"]').val(brand);
+
+        // If promo_products is set, remove it from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const promoProducts = urlParams.get('promo_products');
+        if (promoProducts) {
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
         fetchProducts();
     });
 
@@ -44,12 +61,26 @@ jQuery(document).ready(function ($) {
     function fetchProducts() {
         productsContainer.addClass('loading');
         let home_url = window.location.origin;
-        axios.get(home_url + '/wp-json/tamtam/v1/get-products', {
-            params: {
+        // http://damilton.test/products/?promo_products=222,223,226
+        // Get promo_products from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const promoProducts = urlParams.get('promo_products');
+        let params;
+        if (promoProducts) {
+            productsCategory.removeClass('active text-brown bg-beige');
+            productsCategory.addClass('text-white bg-transparent hover:bg-beige hover:text-brown');
+            params = {
+                promo_products: promoProducts
+            }
+        } else {
+            params = {
                 category: $('.products-filters__params').find('input[name="category"]').val(),
                 brand: $('.products-filters__params').find('input[name="brand"]').val(),
                 sort: $('.products-filters__params').find('input[name="sort"]').val(),
             }
+        }
+        axios.get(home_url + '/wp-json/tamtam/v1/get-products', {
+            params: params
         })
             .then(response => {
                 const products = response.data.results;

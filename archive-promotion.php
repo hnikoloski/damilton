@@ -9,13 +9,13 @@ get_template_part('template-parts/inner-hero');
         <span class="leading-none promotions-total-num text-white absolute -top-[1.2rem] right-0 bg-none text-[2rem] px-[1.2rem] py-[0.6rem] rounded-[100px] border border-solid border-beige"><?php echo wp_count_posts('promotion')->publish; ?></span>
     </h2>
 
-    <div class="flex flex-wrap items-stretch justify-between promotions-results align-stretch">
+    <div class="flex flex-wrap items-stretch justify-around promotions-results align-stretch">
         <?php
         $promotions = get_posts(array(
             'post_type' => 'promotion',
             'orderby' => 'date',
             'order' => 'ASC',
-            'posts_per_page' => 4,
+            'posts_per_page' => 6,
             'post_status' => 'publish',
         ));
         ?>
@@ -57,7 +57,7 @@ get_template_part('template-parts/inner-hero');
                 $promo_permalink = '/products?promo_products=' . implode(',', $promo_products_ids);
             }
         ?>
-            <div class="product-card w-full lg:w-[calc(33.33%-2.4rem)] mb-[5.6rem]">
+            <div class="product-card w-full lg:w-[calc(33.33%-4.8rem)] mb-[5.6rem]">
                 <div class="product-image mb-[.8rem] w-full !h-[36.8rem] relative">
                     <?php if ($promo_badge_num) { ?>
                         <div class="badge absolute top-[1.6rem] right-[1.6rem] z-10">

@@ -8,4 +8,5 @@ import "./scripts/blocks/map-hero-block";
 import "./scripts/blocks/contact-form-block";
 import "./scripts/single-product";
 import "./scripts/brands-fetch";
+import "./scripts/promotions-fetch";
 import "./scripts/sliders";
