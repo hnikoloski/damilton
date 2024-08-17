@@ -30,7 +30,7 @@ jQuery(document).ready(function ($) {
 
         // Check if mobile
         if ($(window).width() < 769) {
-            $('#masthead .logo-wrapper').hide();
+            $('#masthead .logo-wrapper--mob').hide();
         }
     });
 
@@ -42,7 +42,7 @@ jQuery(document).ready(function ($) {
 
         // Check if mobile
         if ($(window).width() < 769) {
-            $('#masthead .logo-wrapper').show();
+            $('#masthead .logo-wrapper--mob').show();
         }
     });
 

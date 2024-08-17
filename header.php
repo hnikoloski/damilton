@@ -36,7 +36,7 @@
             <a href="<?= home_url(); ?>" class="logo-wrapper hidden lg:block w-[18.2rem] h-[6.7rem]">
                 <img src="<?= $logoUrl[0]; ?>" alt="<?= get_bloginfo(); ?>" class="full-size-img full-size-img-contain d-block">
             </a>
-            <a href="<?= home_url(); ?>" class="logo-wrapper lg:hidden block w-[5.4rem] h-[4.8rem] mt-0">
+            <a href="<?= home_url(); ?>" class="logo-wrapper logo-wrapper--mob lg:hidden block w-[5.4rem] h-[4.8rem] mt-0">
                 <?php $header_small_logo = get_field('header_small_logo', 'option'); ?>
                 <img src="<?= $header_small_logo['url']; ?>" alt="<?= get_bloginfo(); ?>" class="full-size-img full-size-img-contain d-block">
             </a>
@@ -50,7 +50,7 @@
                         </i>
                         <span class="screen-reader-text">Search</span>
                     </button>
-                    <form role="search" method="get" class="search-form w-[80vw] lg:w-[50rem] flex items-center justify-between hidden" action="<?php echo home_url('/'); ?>">
+                    <form role="search" method="get" class="search-form w-[65vw] lg:w-[50rem] mr-[3.5rem] lg:mr-0 flex items-center justify-between hidden" action="<?php echo home_url('/'); ?>">
                         <label class="block w-full relative max-w-[80vw] lg:max-w-full">
                             <span class="screen-reader-text">Search for:</span>
                             <input type="search" placeholder="Search …" value="<?php echo get_search_query(); ?>" name="s" title="Search for:" autocomplete="off" class="search-field w-full h-[4rem] px-[1rem] text-[1.6rem] border border-solid border-beige bg-transparent text-beige rounded-[100px]">
