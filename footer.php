@@ -35,7 +35,7 @@ $footerBgMobile = get_field('footer_background_image_mob', 'option');
                 ?>
             </div>
             <div class="flex justify-end items-center mt-[3.5rem] w-full lg:w-auto">
-                <ul class="socials flex flex-row lg:flex-col justify-between items-center gap-[4.8rem] lg:gap-[2rem] w-full lg:w-auto">
+                <ul class="socials flex flex-row lg:flex-col justify-between items-end gap-[4.8rem] lg:gap-[2rem] w-full lg:w-auto">
                     <?php if (get_field('facebook', 'option')) : ?>
                         <li>
                             <a href="<?php echo get_field('facebook', 'option'); ?>" class="social-link text-beige hover:text-white text-[1.4rem] leading-none font-semibold uppercase">
@@ -64,7 +64,7 @@ $footerBgMobile = get_field('footer_background_image_mob', 'option');
     </div><!-- .site-info -->
     <div class="copy-bar px-side-padding-mobile lg:px-side-padding-desktop bg-[rgba(20,19,17,0.7)]">
         <div class="flex justify-center items-center py-[1rem] lg:py-[1.4rem] lg:justify-end">
-            <p class="text-[#909090] text-[0.8rem] leading-none text-[1.4rem] text-[#B7AB99]">© 2024 Damilton, All Rights Reserved</p>
+            <p class="text-[#909090] text-[0.8rem] leading-none text-[1.4rem] text-[#B7AB99]"><?php pll_e('© 2024 Damilton, All Rights Reserved'); ?></p>
         </div>
     </div>
 </footer><!-- #colophon -->

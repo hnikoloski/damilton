@@ -27,10 +27,10 @@ $remove_top_spacing_on_second_column = get_field('remove_top_spacing_on_second_c
 $full_width_highlighted_texts = get_field('full_width_highlighted_texts');
 ?>
 
-<div <?php echo $anchor; ?> class="<?php echo esc_attr($class_name); ?> py-[3.7rem] px-side-padding-mobile lg:px-side-padding-desktop">
+<div <?php echo $anchor; ?> class="<?php echo esc_attr($class_name); ?> py-[3.7rem] lg:pt-[7.6rem] lg:pb-[9.6rem] px-side-padding-mobile lg:px-side-padding-desktop">
     <div class="flex flex-col md:flex-row">
         <div class="text-left w-full <?php if (!$full_width_highlighted_texts) {
-                                            echo 'lg:w-1/2';
+                                            echo 'lg:w-1/2 pr-[8rem]';
                                         } else {
                                             echo 'lg:w-full max-w-[93.6rem] lg:mx-auto text-center';
                                         } ?>">
@@ -61,10 +61,12 @@ $full_width_highlighted_texts = get_field('full_width_highlighted_texts');
                 <p class="text-beige text-[1.6rem] leading-[1.5]"><?php echo esc_html($description); ?></p>
                 <?php if ($about_us_link) :
                     $arrow_right_path = get_template_directory_uri() . '/assets/icons/arrow--right.svg';
+                    $arrow_right_brown_path = get_template_directory_uri() . '/assets/icons/arrow--right--brown.svg';
                 ?>
-                    <a href="<?php echo $about_us_link['url']; ?>" class="group kd-hero-block__dot__card__link mt-[3.2rem] flex items-center text-[1.4rem] font-medium text-brightBeige border border-beige border-solid w-fit px-[3.2rem] py-[1rem] rounded-[100px]">
+                    <a href="<?php echo $about_us_link['url']; ?>" class="group kd-hero-block__dot__card__link mt-[3.2rem] flex items-center text-[1.4rem] font-medium text-brightBeige border border-beige border-solid w-fit px-[3.2rem] py-[1rem] rounded-[100px] hover:bg-beige hover:text-brown transition-all duration-300 ease-in-out">
                         <span><?php echo $about_us_link['title']; ?></span>
-                        <img src="<?php echo $arrow_right_path; ?>" alt="Arrow Right" class="w-[1.7rem] h-[1.2rem] ml-[1.2rem] group-hover:ml-[1.4rem] transition-all duration-300 ease-in-out">
+                        <img src="<?php echo $arrow_right_path; ?>" alt="Arrow Right" class="w-[1.7rem] h-[1.2rem] ml-[1.2rem] group-hover:hidden transition-all duration-300 ease-in-out">
+                        <img src="<?php echo $arrow_right_brown_path; ?>" alt="Arrow Right" class="w-[1.7rem] h-[1.2rem] ml-[1.2rem] hidden group-hover:block transition-all duration-300 ease-in-out">
                     </a>
 
                 <?php endif; ?>

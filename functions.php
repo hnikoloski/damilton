@@ -164,10 +164,16 @@ add_action('wp_enqueue_scripts', 'starter_scripts');
 // Enque the css in the admin area after the other styles so it can override them
 function admin_style()
 {
-    wp_register_style('admin-styles', get_template_directory_uri() . '/dist/css/app.css');
-    wp_enqueue_style('admin-styles');
+    $current_screen = get_current_screen();
+
+    // Check if the current screen supports the block editor
+    if ($current_screen && $current_screen->is_block_editor()) {
+        wp_register_style('admin-styles', get_template_directory_uri() . '/dist/css/app.css');
+        wp_enqueue_style('admin-styles');
+    }
 }
-// add_action('admin_enqueue_scripts', 'admin_style');
+add_action('admin_enqueue_scripts', 'admin_style');
+
 
 /**
  * Implement the Custom Header feature.

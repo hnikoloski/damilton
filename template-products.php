@@ -41,7 +41,8 @@ $brands = get_posts(array(
                 <li class="products-filters__category text-brown bg-beige rounded-[100px] px-[2.4rem] py-[0.8rem] font-medium text-[1.4rem] cursor-pointer border border-solid border-beige hover:bg-beige hover:text-brown transition-all duration-300 mb-[0.8rem]" data-category="*">
                     All (<span class="products-filters__category__number"><?php echo wp_count_posts('product')->publish; ?></span>)
                 </li>
-                <?php foreach ($product_categories as $category) : ?>
+                <?php foreach ($product_categories as $category) :
+                ?>
                     <li class="products-filters__category text-white rounded-[100px] px-[2.4rem] py-[0.8rem] font-medium text-[1.4rem] cursor-pointer border border-solid border-beige hover:bg-beige hover:text-brown transition-all duration-300 mb-[0.8rem]" data-category="<?php echo $category->slug; ?>">
                         <?php echo $category->name; ?> (<span class="products-filters__category__number"><?php echo $category->count; ?></span>)
                     </li>

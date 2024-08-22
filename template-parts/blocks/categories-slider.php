@@ -19,11 +19,10 @@ if (!empty($block['align'])) {
 }
 $sub_heading = get_field('sub_heading');
 $heading = get_field('heading');
-$woo_product_categories = get_terms(array(
-    'taxonomy'   => 'product_cat',
-    'hide_empty' => 0,
-    // Only parent categories
-    'parent'     => 0,
+$woo_product_categories = get_terms('product_cat', array(
+    'orderby'    => 'name',
+    'order'      => 'ASC',
+    'hide_empty' => true,
 ));
 
 ?>
@@ -44,10 +43,17 @@ $woo_product_categories = get_terms(array(
     <div class="kd-categories-slider-block__slider lg:h-[47.5rem]">
         <div class="swiper-container">
             <div class="swiper-wrapper">
+                <div class="w-[8rem] h-[8rem] bg-beige drag-me  justify-center items-center absolute hidden pointer-events-none z-10 rounded-full shadow-loadShadow flex">
+                    <p class="text-brown text-[1.4rem] leading-[1.2] text-center font-bold uppercase">
+                        <?php pll_e('Drag me', 'starter'); ?>
+                    </p>
+                </div>
                 <?php foreach ($woo_product_categories as $category) :
                     $thumbnail_id = get_woocommerce_term_meta($category->term_id, 'thumbnail_id', true);
                     $thumbnail_url = wp_get_attachment_url($thumbnail_id);
-                    $category_link = get_term_link($category);
+                    $home_url = get_home_url();
+                    // Category Link is home_url + /products?category=category_slug
+                    $category_link = $home_url . '/products?category=' . $category->slug;
                     $category_name = $category->name;
                 ?>
                     <div class="swiper-slide">

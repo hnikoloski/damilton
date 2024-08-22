@@ -28,7 +28,11 @@ jQuery(document).ready(function ($) {
         // If promo_products is set, remove it from URL
         const urlParams = new URLSearchParams(window.location.search);
         const promoProducts = urlParams.get('promo_products');
+        const categoryParam = urlParams.get('category');
         if (promoProducts) {
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
+        if (categoryParam) {
             window.history.replaceState({}, document.title, window.location.pathname);
         }
 
@@ -55,6 +59,17 @@ jQuery(document).ready(function ($) {
         }
         fetchProducts();
     });
+    // Check if ?category is set in URL and activate the corresponding category
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlCategory = urlParams.get('category');
+    if (urlCategory) {
+        setTimeout(() => {
+            console.log('urlCategory:', urlCategory);
+            // Simulate click on category
+            $(`.products-filters__category[data-category="${urlCategory}"]`).click();
+            console.log('category clicked');
+        }, 200);
+    }
 
 
     // Fetch products 

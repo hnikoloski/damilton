@@ -65,12 +65,12 @@
                         </button>
                     </form>
                 </div>
-                <div class="lang-switcher relative rounded-[16px] border border-solid border-beige flex items-center justify-center mr-[2.8rem] transition-all duration-300 ease-in-out">
+                <div class="lang-switcher relative lg:w-[9rem] rounded-[16px] border border-solid border-beige flex items-center justify-center mr-[2.8rem] transition-all duration-300 ease-in-out">
                     <?php
                     $currentLang = pll_current_language();
                     $languages = pll_the_languages(array('raw' => 1));
                     ?>
-                    <div id="current-lang" class="lang-switcher__current-lang flex items-center px-[1.8rem] py-[1.2rem] justify-center cursor-pointer">
+                    <div id="current-lang" class="lang-switcher__current-lang flex w-full items-center px-[1.8rem] py-[1.2rem] justify-center cursor-pointer">
                         <span class="text-white text-[1.6rem] font-bold uppercase"><?= $currentLang; ?></span>
                         <?php
                         $chevron_down_icon_url = get_template_directory_uri() . '/assets/icons/chevron-down.svg';
