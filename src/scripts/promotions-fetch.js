@@ -24,11 +24,11 @@ jQuery(document).ready(function ($) {
         } else {
             promoTextColor = '#F4F0EA';
             promoBackgroundColor = '#FB1993';
-            promoBorderColor = '#FB1993';
+            promoBorderColor = '#F4F0EA';
         }
 
         return `
-            <div class="product-card w-full lg:w-[calc(33.33%-4.8rem)] mb-[5.6rem]">
+            <div class="product-card w-full lg:w-[calc(33.33%-2.4rem)] mb-[5.6rem]">
                 <div class="product-image mb-[.8rem] w-full !h-[36.8rem] relative">
                     ${promotion.discount_percentage ? `
                         <div class="badge absolute top-[1.6rem] right-[1.6rem] z-10">

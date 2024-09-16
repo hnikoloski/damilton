@@ -45,4 +45,30 @@ jQuery(document).ready(function ($) {
         },
 
     });
+
+    const $pdfViewer = $('.pdf-viewer');
+    const $techDetailsBtn = $('.tech-details-pdf-btn');
+    const $pdfViewerClose = $('#pdf-viewer-close');
+
+    // Function to toggle the PDF viewer's visibility
+    const togglePdfViewer = () => $pdfViewer.toggleClass('hidden');
+
+    // Function to close the PDF viewer
+    const closePdfViewer = () => $pdfViewer.addClass('hidden');
+
+    // Handle "Tech Details PDF" button click
+    $techDetailsBtn.on('click', function (e) {
+        e.preventDefault();
+        togglePdfViewer();
+    });
+
+    // Handle "Close" button click
+    $pdfViewerClose.on('click', closePdfViewer);
+
+    // Close the PDF viewer when the Escape key is pressed
+    $(document).on('keydown', function (e) {
+        if (e.key === 'Escape' && !$pdfViewer.hasClass('hidden')) {
+            closePdfViewer();
+        }
+    });
 });

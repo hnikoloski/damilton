@@ -61,8 +61,8 @@ get_header();
                         }
                         ?>
                     </div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev !text-beige"></div>
+                    <div class="swiper-button-next !text-beige"></div>
 
                 </div>
 
@@ -81,13 +81,17 @@ get_header();
             }
             ?>
             <div class="my-[5rem] flex flex-wrap justify-between flex-col lg:flex-row items-start lg:items-center">
-                <a href="#techdetails" class="group inline-block lg:flex items-center text-white rounded-[100px] pl-[2.4rem] pr-[6rem] py-[0.8rem] font-medium text-[1.4rem] cursor-pointer border border-solid border-beige bg-transparent transition-all duration-300 mb-[0.8rem] relative">
-                    <?php
-                    $arrowUrl = get_template_directory_uri() . '/assets/icons/arrow--right.svg';
-                    ?>
-                    <span><?php pll_e('Technical Details', 'starter'); ?></span>
-                    <img src="<?php echo $arrowUrl; ?>" alt="Arrow Right" class="!w-[1.7rem] !h-[1.2rem] ml-[1.2rem] group-hover:ml-[1.4rem] transition-all duration-300 ease-in-out absolute -translate-y-1/2 right-[2.4rem] top-[50%] group-hover:right-[1.6rem]">
-                </a>
+                <?php if (get_field('technical_details')) :
+                    $technical_details = get_field('technical_details');
+                ?>
+                    <a href="<?php echo $technical_details['url']; ?>" class="group inline-block lg:flex items-center text-white rounded-[100px] pl-[2.4rem] pr-[6rem] py-[0.8rem] font-medium text-[1.4rem] cursor-pointer border border-solid border-beige bg-transparent transition-all duration-300 mb-[0.8rem] relative tech-details-pdf-btn">
+                        <?php
+                        $arrowUrl = get_template_directory_uri() . '/assets/icons/arrow--right.svg';
+                        ?>
+                        <span><?php pll_e('Technical Details', 'starter'); ?></span>
+                        <img src="<?php echo $arrowUrl; ?>" alt="Arrow Right" class="!w-[1.7rem] !h-[1.2rem] ml-[1.2rem] group-hover:ml-[1.4rem] transition-all duration-300 ease-in-out absolute -translate-y-1/2 right-[2.4rem] top-[50%] group-hover:right-[1.6rem]">
+                    </a>
+                <?php endif; ?>
                 <a href="#ask-price" class="group inline-block lg:flex items-center text-brown rounded-[100px] pl-[2.4rem] pr-[6rem] py-[0.8rem] font-medium text-[1.4rem] cursor-pointer border border-solid border-beige bg-beige transition-all duration-300 mb-[0.8rem] relative">
                     <?php
                     $arrowUrl = get_template_directory_uri() . '/assets/icons/arrow--right--brown.svg';
@@ -165,7 +169,7 @@ get_header();
                 $product_category = wp_get_post_terms($product_id, 'product_cat', array('fields' => 'names'))[0];
                 $product_badge = get_field('badge', $product_id) ?: '';
             ?>
-                <div class="product-card w-full lg:w-[calc(33.33%-4.8rem)] mb-[5.6rem]">
+                <div class="product-card w-full lg:w-[calc(33.33%-2.4rem)] mb-[5.6rem]">
                     <div class="product-image mb-[.8rem] w-full !h-[36.8rem] relative">
                         <?php if ($product_badge) { ?>
                             <div class="badge absolute top-[1.6rem] right-[1.6rem] z-10">
@@ -198,5 +202,56 @@ get_header();
         </div>
     <?php endif; ?>
 </div>
+
+<div class="pdf-viewer fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
+
+    <button id="pdf-viewer-close" class="pdf-viewer__close rounded-full bg-[#F9DCBC] bg-opacity-10  w-[4.8rem] h-[4.8rem] flex items-center justify-center transition-all duration-300 ease-in-out hover:bg-opacity-20 absolute top-[2.4rem] right-[2.4rem] cursor-pointer z-50">
+        <?php
+        $close_icon_url = get_template_directory_uri() . '/assets/icons/close-icon.svg';
+        ?>
+        <i class=" block bg-contain bg-no-repeat bg-center w-[1.2rem] h-[1.2rem]" style="background-image: url('<?= $close_icon_url; ?>');">
+        </i>
+        <span class="screen-reader-text">Close</span>
+    </button>
+    <div class="pdf-viewer__content w-full h-full relative flex items-center justify-center px-side-padding-mobile lg:px-side-padding-desktop py-[8rem] lg:py-[4.8rem]">
+        <div id="adobe-dc-view" class="h-[80vh]"></div> <!-- Container for PDF viewer -->
+
+        <?php
+        // Fetch PDF URL from a custom field or metadata if it's dynamic
+        $pdf_url = get_field('technical_details')['url'];
+        $filename = get_field('technical_details')['filename'];
+        if ($pdf_url) {
+        ?>
+            <script src="https://acrobatservices.adobe.com/view-sdk/viewer.js"></script>
+            <script src="https://acrobatservices.adobe.com/view-sdk/3.27.1_3.2.7-9e155824/ViewSDKInterface.js"></script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    var adobeDCView = new AdobeDC.View({
+                        clientId: "464b3331abd64ad1b39154f400c2bbd8", // Your API key
+                        divId: "adobe-dc-view"
+                    });
+                    adobeDCView.previewFile({
+                        content: {
+                            location: {
+                                url: "<?php echo esc_url($pdf_url); ?>"
+                            }
+                        }, // Dynamically inserting the PDF URL
+                        metaData: {
+                            fileName: <?php echo json_encode($filename); ?> // Optional: Specify a file name
+                        } // Optional: Specify a file name
+                    }, {
+                        embedMode: "FULL_WINDOW" // Modes: SIZED_CONTAINER, FULL_WINDOW, IN_LINE
+                    });
+                });
+            </script>
+        <?php
+        } else {
+            echo '<p>No technical details PDF available for this product.</p>';
+        }
+        ?>
+    </div>
+
+</div>
+
 <?php
 get_footer();

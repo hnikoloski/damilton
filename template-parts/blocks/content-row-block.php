@@ -51,13 +51,13 @@ $full_width_highlighted_texts = get_field('full_width_highlighted_texts');
         </div>
         <?php if (!$full_width_highlighted_texts) { ?>
 
-            <div class="w-full lg:w-1/3 lg:pl-[4.8rem] <?php
-                                                        if ($remove_top_spacing_on_second_column) {
-                                                            echo ' pt-0';
-                                                        } else {
-                                                            echo ' pt-[6.5rem]';
-                                                        }
-                                                        ?>">
+            <div class="w-full lg:w-1/3  <?php
+                                            if ($remove_top_spacing_on_second_column) {
+                                                echo ' pt-0 lg:pl-0';
+                                            } else {
+                                                echo ' pt-[6.5rem] lg:pl-[4.8rem]';
+                                            }
+                                            ?>">
                 <p class="text-beige text-[1.6rem] leading-[1.5]"><?php echo esc_html($description); ?></p>
                 <?php if ($about_us_link) :
                     $arrow_right_path = get_template_directory_uri() . '/assets/icons/arrow--right.svg';

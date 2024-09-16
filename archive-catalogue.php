@@ -32,7 +32,7 @@ $catalogues = get_posts(array(
 
         <?php foreach ($catalogues as $catalogue) : ?>
             <div class="pb-[4.8rem] [&:not(:first-of-type)]:pt-[4.8rem] [&:not(:last-of-type)]:border-b border-solid border-[#909090] w-full">
-                <h2 class="text-[2.4rem] text-beige font-semibold leading-[1.2] mb-[3.2rem]"><?= $catalogue->post_title; ?></h2>
+                <h2 class="text-[2.4rem] text-beige leading-[1.2] mb-[3.2rem]"><?= $catalogue->post_title; ?></h2>
                 <?php
                 if (have_rows('catalogues', $catalogue->ID)) :
                     $unique_id = uniqid();

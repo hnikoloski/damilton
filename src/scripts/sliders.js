@@ -47,4 +47,25 @@ jQuery(document).ready(function ($) {
             $(this).off('mousemove');
         });
     }
+
+    if ($('.kd-partners-ribbon-block').length) {
+        const swiper = new Swiper('.kd-partners-ribbon-block', {
+            slidesPerView: 3, // Automatically adjust to the width of the images
+            loop: true,            // Infinite loop
+            speed: 10000,          // Adjust speed to control ribbon speed
+            spaceBetween: 80,       // No space between slides
+            autoplay: {
+                delay: 0,          // No delay for continuous scrolling
+                disableOnInteraction: false, // Keep autoplay even after interaction
+            },
+            freeMode: true,         // No snap to slide effect
+            freeModeMomentum: false, // Disable momentum for smooth continuous scrolling
+            breakpoints: {
+                1024: {
+                    slidesPerView: 7,
+                },
+
+            },
+        });
+    }
 });

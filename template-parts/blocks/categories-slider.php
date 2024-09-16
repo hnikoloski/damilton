@@ -19,10 +19,11 @@ if (!empty($block['align'])) {
 }
 $sub_heading = get_field('sub_heading');
 $heading = get_field('heading');
-$woo_product_categories = get_terms('product_cat', array(
-    'orderby'    => 'name',
-    'order'      => 'ASC',
-    'hide_empty' => true,
+$woo_product_categories = get_terms(array(
+    'taxonomy'   => 'product_cat',
+    'hide_empty' => 1,
+    // Only parent categories
+    'parent'     => 0,
 ));
 
 ?>

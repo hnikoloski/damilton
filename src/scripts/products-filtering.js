@@ -28,11 +28,7 @@ jQuery(document).ready(function ($) {
         // If promo_products is set, remove it from URL
         const urlParams = new URLSearchParams(window.location.search);
         const promoProducts = urlParams.get('promo_products');
-        const categoryParam = urlParams.get('category');
         if (promoProducts) {
-            window.history.replaceState({}, document.title, window.location.pathname);
-        }
-        if (categoryParam) {
             window.history.replaceState({}, document.title, window.location.pathname);
         }
 
@@ -140,7 +136,7 @@ jQuery(document).ready(function ($) {
         }
 
         return `
-            <div class="product-card w-full lg:w-[calc(33.33%-4.8rem)] mb-[5.6rem]">
+            <div class="product-card w-full lg:w-[calc(33.33%-2.4rem)] mb-[5.6rem]">
                 <div class="product-image mb-[.8rem] w-full h-[36.8rem] relative">
                     ${badge}
                     <img src="${product.image}" alt="${product.title}" class="w-full h-full object-cover object-center">
