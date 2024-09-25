@@ -27,10 +27,10 @@ $remove_top_spacing_on_second_column = get_field('remove_top_spacing_on_second_c
 $full_width_highlighted_texts = get_field('full_width_highlighted_texts');
 ?>
 
-<div <?php echo $anchor; ?> class="<?php echo esc_attr($class_name); ?> py-[3.7rem] lg:pt-[7.6rem] lg:pb-[9.6rem] px-side-padding-mobile lg:px-side-padding-desktop">
+<div <?php echo $anchor; ?> class="<?php echo esc_attr($class_name); ?> py-[3.7rem] lg:pt-[7.6rem] lg:pb-[9.6rem] px-side-padding-mobile lg:px-[22rem]">
     <div class="flex flex-col md:flex-row">
         <div class="text-left w-full <?php if (!$full_width_highlighted_texts) {
-                                            echo 'lg:w-1/2 pr-[8rem]';
+                                            echo 'lg:w-1/2 pr-[2rem]';
                                         } else {
                                             echo 'lg:w-full max-w-[93.6rem] lg:mx-auto text-center';
                                         } ?>">
@@ -51,9 +51,9 @@ $full_width_highlighted_texts = get_field('full_width_highlighted_texts');
         </div>
         <?php if (!$full_width_highlighted_texts) { ?>
 
-            <div class="w-full lg:w-1/3  <?php
+            <div class="w-full lg:w-1/2  <?php
                                             if ($remove_top_spacing_on_second_column) {
-                                                echo ' pt-0 lg:pl-0';
+                                                echo ' pt-0 lg:pl-[10rem]';
                                             } else {
                                                 echo ' pt-[6.5rem] lg:pl-[4.8rem]';
                                             }

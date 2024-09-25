@@ -138,10 +138,7 @@ jQuery(document).ready(function ($) {
             "elementType": "labels.icon",
             "stylers": [
                 {
-                    "saturation": "-89"
-                },
-                {
-                    "lightness": "-55"
+                    "visibility": "off"
                 }
             ]
         },
@@ -257,9 +254,17 @@ jQuery(document).ready(function ($) {
 
     // Custom inline SVG icon
     const svgIcon = `
-    <svg width="18" height="22" viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M17.6201 7.45C16.5701 2.83 12.5401 0.75 9.0001 0.75C9.0001 0.75 9.0001 0.75 8.9901 0.75C5.4601 0.75 1.4201 2.82 0.370095 7.44C-0.799905 12.6 2.3601 16.97 5.2201 19.72C6.2801 20.74 7.6401 21.25 9.0001 21.25C10.3601 21.25 11.7201 20.74 12.7701 19.72C15.6301 16.97 18.7901 12.61 17.6201 7.45ZM9.0001 12.46C7.2601 12.46 5.8501 11.05 5.8501 9.31C5.8501 7.57 7.2601 6.16 9.0001 6.16C10.7401 6.16 12.1501 7.57 12.1501 9.31C12.1501 11.05 10.7401 12.46 9.0001 12.46Z" fill="#F9DCBC"/>
+    <svg width="24" height="27" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M20.6201 8.45C19.5701 3.83 15.5401 1.75 12.0001 1.75C12.0001 1.75 12.0001 1.75 11.9901 1.75C8.4601 1.75 4.4201 3.82 3.3701 8.44C2.2001 13.6 5.3601 17.97 8.2201 20.72C9.2801 21.74 10.6401 22.25 12.0001 22.25C13.3601 22.25 14.7201 21.74 15.7701 20.72C18.6301 17.97 21.7901 13.61 20.6201 8.45ZM12.0001 13.46C10.2601 13.46 8.8501 12.05 8.8501 10.31C8.8501 8.57 10.2601 7.16 12.0001 7.16C13.7401 7.16 15.1501 8.57 15.1501 10.31C15.1501 12.05 13.7401 13.46 12.0001 13.46Z" fill="#F9DCBC"/>
+<ellipse cx="12" cy="25.5" rx="12" ry="1.5" fill="url(#paint0_radial_45_620)"/>
+<defs>
+<radialGradient id="paint0_radial_45_620" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(12 25.5) scale(12 1.5)">
+<stop/>
+<stop offset="1" stop-opacity="0"/>
+</radialGradient>
+</defs>
 </svg>
+
 
     `;
     const encodedSVG = 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svgIcon);
@@ -281,7 +286,7 @@ jQuery(document).ready(function ($) {
         const div = document.createElement('div');
         div.style.position = 'absolute';
         div.style.color = 'white';
-        div.style.fontSize = '4rem';
+        div.style.fontSize = '3rem';
         div.style.fontStyle = 'italic';
         div.style.textAlign = 'center';
         div.innerHTML = 'We are here';
@@ -291,7 +296,7 @@ jQuery(document).ready(function ($) {
         panes.overlayLayer.appendChild(div);
     };
 
-    let transformStyle = 'translate(-50%, -150%)';
+    let transformStyle = 'translate(-50%, -1570%)';
     // If mobile
     if (window.innerWidth <= 1024) {
         transformStyle = 'translate(-50%, -200%)';

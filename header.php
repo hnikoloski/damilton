@@ -77,14 +77,14 @@
                         ?>
                         <i class="block bg-contain bg-no-repeat bg-center w-[2.4rem] h-[2.4rem] ml-[.8rem]" style="background-image: url('<?= $chevron_down_icon_url; ?>');"></i>
                     </div>
-                    <ul id="lang-dropdown" class="lang-switcher__dropdown absolute bg-dark border border-solid border-beige top-[100%] left-0 w-[100%] z-10 rounded-b-[16px] transition-all duration-300 ease-in-out scale-y-0 transform origin-top">
+                    <ul id="lang-dropdown" class="lang-switcher__dropdown absolute bg-dark outline outline-[1px] outline-solid outline-beige top-[100%] left-0 w-[100%] z-10 rounded-b-[16px] transition-all duration-300 ease-in-out scale-y-0 transform origin-top">
                         <?php foreach ($languages as $lang) :
                             // Skip the current language
                             if ($currentLang === $lang['slug']) {
                                 continue;
                             }
                         ?>
-                            <li class="lang-switcher__dropdown-item p-[1rem]">
+                            <li class="lang-switcher__dropdown-item p-[1rem] w-full">
                                 <a href="<?= $lang['url']; ?>" class="block text-beige text-[1.6rem] font-bold text-center uppercase"><?= $lang['slug']; ?></a>
                             </li>
                         <?php endforeach; ?>

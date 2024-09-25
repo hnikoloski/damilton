@@ -19,6 +19,14 @@ if (!empty($block['align'])) {
 }
 
 $location = get_field('location');
+if (!$location) {
+    $location = [
+        'lat' => 42.0068833,
+        'lng' => 21.3421464,
+        'zoom' => 15
+    ];
+}
+
 ?>
 
 <div <?php echo $anchor; ?> class="<?php echo esc_attr($class_name); ?>">

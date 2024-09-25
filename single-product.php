@@ -36,7 +36,7 @@ get_header();
             }
 
             if (!empty($all_image_urls)) { ?>
-                <div class="product-slider-thumbs swiper order-2 lg:order-1 lg:w-[12rem] mt-[0.8rem] lg:mt-0 max-h-full" thumbsSlider="">
+                <div class="product-slider-thumbs ml-0 swiper order-2 lg:order-1 lg:w-[12rem] mt-[0.8rem] lg:mt-0 max-h-full" thumbsSlider="">
                     <div class="swiper-wrapper">
                         <?php
                         foreach ($all_image_urls as $url) {
@@ -227,7 +227,7 @@ get_header();
             <script>
                 document.addEventListener("DOMContentLoaded", function() {
                     var adobeDCView = new AdobeDC.View({
-                        clientId: "464b3331abd64ad1b39154f400c2bbd8", // Your API key
+                        clientId: "c9c330ff863e40799dbda3ba4413bae0", // Your API key
                         divId: "adobe-dc-view"
                     });
                     adobeDCView.previewFile({
