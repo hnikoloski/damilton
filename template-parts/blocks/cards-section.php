@@ -58,7 +58,7 @@ $heading = get_field('heading');
                         </div>
                         <h2 class="text-beige text-[2.4rem] font-semibold leading-[1.2] mb-[1.6rem]"><?= $title; ?></h2>
 
-                        <div class="text-brightBeige text-[1.6rem] leading-[1.2]">
+                        <div class="text-brightBeige text-[1.6rem] leading-[1.5]">
                             <?php echo $description; ?>
                         </div>
                         <?php if ($link) : ?>

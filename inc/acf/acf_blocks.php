@@ -132,6 +132,19 @@ function register_acf_block_types()
         'icon'              => 'admin-comments',
         'keywords'          => array('contact', 'form'),
     ));
+
+    // Gallery Block
+    acf_register_block_type(array(
+        'name'              => 'gallery',
+        'title'             => __('Gallery'),
+        'description'       => __('A custom gallery block.'),
+        'render_template'   => 'template-parts/blocks/gallery.php',
+        'category'          => 'kd',
+        'icon'              => 'admin-comments',
+        'keywords'          => array('gallery', 'images'),
+        'enqueue_style'     => 'https://unpkg.com/flexmasonry/dist/flexmasonry.css',
+        'enqueue_script'    => 'https://unpkg.com/flexmasonry/dist/flexmasonry.js',
+    ));
 }
 
 // Check if ACF is active

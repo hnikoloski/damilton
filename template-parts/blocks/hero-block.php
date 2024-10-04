@@ -22,7 +22,7 @@ $bgImgUrl = esc_url($bgImg);
 
 ?>
 
-<div <?php echo $anchor; ?> class="<?php echo esc_attr($class_name); ?> relative h-[81rem]" style="background-image: url('<?php echo $bgImgUrl; ?>'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+<div <?php echo $anchor; ?> class="<?php echo esc_attr($class_name); ?> relative h-[60rem] lg:h-[81rem]" style="background-image: url('<?php echo $bgImgUrl; ?>'); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <?php
     // image_cta_points repeater
     if (have_rows('image_cta_points')) :

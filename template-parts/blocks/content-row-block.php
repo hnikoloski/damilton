@@ -46,7 +46,7 @@ $full_width_highlighted_texts = get_field('full_width_highlighted_texts');
                 <?php endif; ?>
             </p>
             <?php if (get_field('full_width_secondary_heading')) : ?>
-                <h4 class="text-[3.6rem] lg:text-[4.8rem] italic text-[#799410] mt-[1.6rem] lg:mt-0"><?php echo get_field('full_width_secondary_heading'); ?></h4>
+                <h4 class="text-[3.4rem] lg:text-[3.6rem] lg:text-[4.8rem] italic text-[#799410] mt-[1.6rem] lg:mt-0"><?php echo get_field('full_width_secondary_heading'); ?></h4>
             <?php endif; ?>
         </div>
         <?php if (!$full_width_highlighted_texts) { ?>

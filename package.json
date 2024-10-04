@@ -37,6 +37,7 @@
     "webpack-livereload-plugin": "^1.2.0"
   },
   "dependencies": {
+    "@fancyapps/ui": "^5.0.36",
     "@popperjs/core": "^2.9.2",
     "axios": "^1.6.7",
     "lodash.debounce": "^4.0.8",

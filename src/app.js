@@ -10,3 +10,4 @@ import "./scripts/single-product";
 import "./scripts/brands-fetch";
 import "./scripts/promotions-fetch";
 import "./scripts/sliders";
+import "./scripts/blocks/gallery-block";

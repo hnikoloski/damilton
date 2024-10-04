@@ -37,7 +37,7 @@ $brands = get_posts(array(
             <input type="hidden" name="sort" value="a-z">
         </form>
         <div class="products-filters__categories">
-            <ul class="flex space-x-[1.6rem] flex-wrap w-full lg:w-auto">
+            <ul class="flex gap-x-[1.6rem] gap-y-[1rem] flex-wrap w-full lg:w-auto">
                 <li class="products-filters__category text-brown bg-beige rounded-[100px] px-[2.4rem] py-[0.8rem] font-medium text-[1.4rem] cursor-pointer border border-solid border-beige hover:bg-beige hover:text-brown transition-all duration-300 mb-[0.8rem]" data-category="*">
                     All (<span class="products-filters__category__number"><?php echo wp_count_posts('product')->publish; ?></span>)
                 </li>

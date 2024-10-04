@@ -296,7 +296,7 @@ jQuery(document).ready(function ($) {
         panes.overlayLayer.appendChild(div);
     };
 
-    let transformStyle = 'translate(-50%, -1570%)';
+    let transformStyle = 'translate(-50%, -170%)';
     // If mobile
     if (window.innerWidth <= 1024) {
         transformStyle = 'translate(-50%, -200%)';

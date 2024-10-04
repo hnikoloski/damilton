@@ -24,7 +24,7 @@ get_template_part('template-parts/inner-hero');
         <?php endif; ?>
 
         <?php if ($heading):
-            printf('<%1$s class="text-[4rem] lg:text-[4.8rem] text-center text-beige font-medium mb-[4rem] px-[2.5rem] lg:px-0 block lg:flex items-center justify-center">%2$s</%1$s>', $heading_tag, $heading_with_icon);
+            printf('<%1$s class="text-[4rem] lg:text-[4.8rem] text-center text-beige font-medium mb-[4rem] lg:px-[2.5rem] lg:px-0 block lg:flex items-center justify-center">%2$s</%1$s>', $heading_tag, $heading_with_icon);
         ?>
         <?php endif; ?>
         <div class="max-w-full lg:max-w-[78.4rem] mx-auto lg:flex flex-wrap items-start justify-between">

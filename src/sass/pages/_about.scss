@@ -16,6 +16,10 @@
             &__bottom-content {
                 @apply text-[1.6rem] text-brightBeige leading-[1.2];
 
+                p {
+                    @apply text-[1.6rem];
+                }
+
                 span {
                     @apply text-beige leading-[1] font-medium;
                 }

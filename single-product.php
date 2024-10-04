@@ -36,7 +36,7 @@ get_header();
             }
 
             if (!empty($all_image_urls)) { ?>
-                <div class="product-slider-thumbs ml-0 swiper order-2 lg:order-1 lg:w-[12rem] mt-[0.8rem] lg:mt-0 max-h-full" thumbsSlider="">
+                <div class="product-slider-thumbs ml-0 swiper order-2 lg:order-1 lg:w-[12rem] mt-[0.8rem] lg:mt-0 max-h-full h-[7rem] sm:h-[12rem] lg:h-auto" thumbsSlider="">
                     <div class="swiper-wrapper">
                         <?php
                         foreach ($all_image_urls as $url) {
@@ -49,7 +49,7 @@ get_header();
                         ?>
                     </div>
                 </div>
-                <div class="product-slider swiper w-full order-1 lg:order-2 lg:w-[calc(100%-12rem-2.4rem)] h-full">
+                <div class="product-slider swiper w-full order-1 lg:order-2 lg:w-[calc(100%-12rem-2.4rem)] h-[34.6rem] lg:h-full">
                     <div class="swiper-wrapper">
                         <?php
                         foreach ($all_image_urls as $url) {
@@ -84,7 +84,7 @@ get_header();
                 <?php if (get_field('technical_details')) :
                     $technical_details = get_field('technical_details');
                 ?>
-                    <a href="<?php echo $technical_details['url']; ?>" class="group inline-block lg:flex items-center text-white rounded-[100px] pl-[2.4rem] pr-[6rem] py-[0.8rem] font-medium text-[1.4rem] cursor-pointer border border-solid border-beige bg-transparent transition-all duration-300 mb-[0.8rem] relative tech-details-pdf-btn">
+                    <a href="<?php echo $technical_details['url']; ?>" class="group inline-block lg:flex items-center text-white rounded-[100px] pl-[2.4rem] pr-[6rem] py-[0.8rem] font-medium text-[1.4rem] cursor-pointer border border-solid border-beige bg-transparent transition-all duration-300 mb-[1.2rem] lg:mb-[0.8rem] relative tech-details-pdf-btn">
                         <?php
                         $arrowUrl = get_template_directory_uri() . '/assets/icons/arrow--right.svg';
                         ?>
@@ -128,7 +128,7 @@ get_header();
                     <tr>
                         <td class="text-brightBeige font-semibold text-[1.4rem] w-[8.8rem] pb-[3rem]"><?php pll_e('Share:'); ?></td>
                         <td class="text-brightBeige text-[1.4rem] table-cell align-middle pb-[3rem]">
-                            <a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" class="w-[2.4rem] h-[2.4rem] mr-[1.6rem] inline-block">
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" class="w-[2.4rem] h-[2.4rem] mr-[1.6rem] inline-block -ml-[.6rem]">
                                 <?php $facebookIcon = get_template_directory_uri() . '/assets/icons/facebook.svg'; ?>
                                 <i class="bg-contain bg-no-repeat bg-center w-full h-full block" style="background-image: url('<?= $facebookIcon; ?>');"></i>
                             </a>

@@ -21,7 +21,7 @@ if (is_archive()) {
 ?>
 <div class="inner-hero w-full px-5 pt-[18.8rem] pb-[13.6rem]" style="background-image: url('<?php echo $background_image['url']; ?>'); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <?php if ($title) :
-        printf('<%1$s class="text-beige text-[2.8rem] text-center">%2$s</%1$s>', $title_tag, $title);
+        printf('<%1$s class="inner-hero__text px-[1rem] lg:px-0 text-beige text-[2.8rem] text-center">%2$s</%1$s>', $title_tag, $title);
     ?>
     <?php endif; ?>
 </div>
