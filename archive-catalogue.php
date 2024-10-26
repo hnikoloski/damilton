@@ -9,6 +9,7 @@ $catalogues = get_posts(array(
     'order' => 'ASC',
     'posts_per_page' => -1,
     'post_status' => 'publish',
+    'lang' => pll_current_language(),
 ));
 ?>
 <div class="px-side-padding-mobile lg:px-side-padding-desktop">
@@ -63,4 +64,19 @@ $catalogues = get_posts(array(
         <?php endforeach; ?>
     </div>
 </div>
+
+<div class="pdf-viewer fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
+    <button id="pdf-viewer-close" class="pdf-viewer__close rounded-full bg-[#F9DCBC] bg-opacity-10  w-[4.8rem] h-[4.8rem] flex items-center justify-center transition-all duration-300 ease-in-out hover:bg-opacity-20 absolute top-[2.4rem] right-[2.4rem] cursor-pointer z-50">
+        <?php
+        $close_icon_url = get_template_directory_uri() . '/assets/icons/close-icon.svg';
+        ?>
+        <i class="block bg-contain bg-no-repeat bg-center w-[1.2rem] h-[1.2rem]" style="background-image: url('<?= $close_icon_url; ?>');"></i>
+        <span class="screen-reader-text">Close</span>
+    </button>
+    <div class="pdf-viewer__content w-full h-full relative flex items-center justify-center px-side-padding-mobile lg:px-side-padding-desktop py-[8rem] lg:py-[4.8rem]">
+        <div id="adobe-dc-view" class="h-[80vh]"></div> <!-- Container for PDF viewer -->
+    </div>
+</div>
+
+<script src="https://acrobatservices.adobe.com/view-sdk/viewer.js"></script>
 <?php get_footer(); ?>

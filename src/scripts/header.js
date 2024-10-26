@@ -26,24 +26,26 @@ jQuery(document).ready(function ($) {
         e.preventDefault();
         $(searchTrigger).toggle();
         $(searchForm).removeClass("hidden").addClass("mr-4");
-        $('#menu-trigger').hide();
-
-        // Check if mobile
-        if ($(window).width() < 769) {
-            $('#masthead .logo-wrapper--mob').hide();
+        if ($(window).width() > 768) {
+            $('#menu-trigger').hide();
         }
+        // Check if mobile
+        // if ($(window).width() < 769) {
+        //     $('#masthead .logo-wrapper--mob').hide();
+        // }
     });
 
     $(searchClose).on("click", function (e) {
         e.preventDefault();
         $(searchTrigger).toggle();
         $(searchForm).addClass("hidden").removeClass("mr-4");
-        $('#menu-trigger').show();
-
-        // Check if mobile
-        if ($(window).width() < 769) {
-            $('#masthead .logo-wrapper--mob').show();
+        if ($(window).width() > 768) {
+            $('#menu-trigger').show();
         }
+        // Check if mobile
+        // if ($(window).width() < 769) {
+        //     $('#masthead .logo-wrapper--mob').show();
+        // }
     });
 
     const menuOverlayWrap = $("#menu-overlay-wrap");

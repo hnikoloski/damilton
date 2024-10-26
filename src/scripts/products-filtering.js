@@ -88,6 +88,7 @@ jQuery(document).ready(function ($) {
                 category: $('.products-filters__params').find('input[name="category"]').val(),
                 brand: $('.products-filters__params').find('input[name="brand"]').val(),
                 sort: $('.products-filters__params').find('input[name="sort"]').val(),
+                lang: $('.products-filters__params').find('input[name="lang"]').val()
             }
         }
         axios.get(home_url + '/wp-json/tamtam/v1/get-products', {

@@ -6,6 +6,7 @@ function get_products($request)
     $sort = $request->get_param('sort');
     $image_size = $request->get_param('image_size') ?: 'product';
     $promo_products = $request->get_param('promo_products'); // Comma-separated list of product IDs
+    $lang = $request->get_param('lang');
 
 
     $args = array(
@@ -13,6 +14,9 @@ function get_products($request)
         'posts_per_page' => -1,
         'post_status' => 'publish',
     );
+    if ($lang) {
+        $args['lang'] = $lang;
+    }
 
     // If there are promo_products return only those
     if (!empty($promo_products)) {

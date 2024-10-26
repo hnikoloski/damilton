@@ -26,7 +26,7 @@ $background_image_mobile = get_field('background_image_mobile') ? get_field('bac
     <div class="flex flex-wrap items-center justify-between px-[2rem] lg:px-[20rem]">
         <?php if (get_field('text_content')) : ?>
             <div class="w-full lg:w-[55rem] mb-[3.5rem] lg:mb-0">
-                <h2 class="text-beige text-[4rem] lg:text-[4.8rem] leading-[1.2] font-medium text-center lg:text-left">
+                <h2 class="text-beige text-[3.6rem] lg:text-[4.8rem] leading-[1.2] font-medium text-center lg:text-left">
                     <?php echo get_field('text_content'); ?>
                 </h2>
             </div>

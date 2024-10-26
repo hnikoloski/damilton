@@ -59,8 +59,31 @@ jQuery(document).ready(function ($) {
     function fetchPromotions(page) {
         let home_url = window.location.origin;
         let api_url = home_url + '/wp-json/tamtam/v1/get-promotions';
-        return axios.get(`${api_url}?page=${page}`);
+        let lang = promotionsContainer.attr('data-lang');
+        return axios.get(`${api_url}?page=${page}&lang=${lang}`);
     }
+    fetchPromotions(1).then(response => {
+        const data = response.data;
+        const promotions = data.promotions;
+        const maxPages = data.max_pages;
+
+        promotions.forEach(promotion => {
+            const promotionHtml = promotionCardComponent(promotion);
+            promotionsContainer.append(promotionHtml);
+        });
+
+        // Increment the data-page attribute
+        promotionsFetch.attr('data-page', 2);
+
+        // Hide the button if the last page is reached
+        if (maxPages === 1) {
+            promotionsFetch.hide();
+        }
+    }).catch(error => {
+        console.error('Error fetching promotions:', error);
+    }
+    );
+
 
     // Load more promotions on button click
     promotionsFetch.on('click', function () {

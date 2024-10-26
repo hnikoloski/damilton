@@ -12,6 +12,7 @@ module.exports = {
       },
       fontFamily: {
         'manrope': ['Manrope', 'sans-serif'],
+        'greatVibes': ['Great Vibes', 'cursive'],
       },
       keyframes: {
         ribbonAnim: {

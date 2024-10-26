@@ -13,7 +13,7 @@ get_template_part('template-parts/inner-hero');
         $heading_icon = get_field('heading_icon');
 
         if ($heading_icon) {
-            $heading_with_icon = str_replace('{icon}', '<i class="inline-block bg-contain bg-no-repeat bg-center w-[4rem] h-[4rem] lg:w-[5.2rem] lg:h-[5.2rem] mx-[1rem] lg:mx-[1.6rem] lg:mt-[1rem]" style="background-image: url(' . $heading_icon . ');"></i>', $heading);
+            $heading_with_icon = str_replace('{icon}', '<i class="inline-block bg-contain bg-no-repeat bg-center w-[4rem] h-[4rem] lg:w-[5.2rem] lg:h-[5.2rem] mx-[1rem] lg:mx-[1.6rem] lg:mt-[1rem]" style="background-image: url(' . $heading_icon . ');"></i> <br class="block lg:hidden">', $heading);
         } else {
             $heading_with_icon = $heading;
         }

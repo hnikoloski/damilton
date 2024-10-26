@@ -6,7 +6,7 @@ jQuery(document).ready(function ($) {
     // Check if mobile 
     let searchInput;
     if ($(window).width() < 769) {
-        searchInput = $('.search-form--mobile label input');
+        searchInput = $('#masthead .search-field');
     } else {
         searchInput = $('#masthead .search-form input');
     }
@@ -77,11 +77,12 @@ jQuery(document).ready(function ($) {
 
     const debouncedHandleSearch = debounce(handleSearch, 400);
 
+    // also console log the search value
     searchInput.on('keyup', debouncedHandleSearch);
 
     searchInput.on('change', function () {
         let searchValue = $(this).val();
-        // console.log('searchValue:', searchValue);
+        console.log('searchValue:', searchValue);
         if (searchValue.length < 3) {
             searchInput.parent().find('.search-results').remove();
         }

@@ -49,7 +49,7 @@ get_header();
                         ?>
                     </div>
                 </div>
-                <div class="product-slider swiper w-full order-1 lg:order-2 lg:w-[calc(100%-12rem-2.4rem)] h-[34.6rem] lg:h-full">
+                <div class="product-slider swiper w-full order-1 lg:order-2 lg:w-[calc(100%-12rem-2.4rem)] h-[calc(100vw-3rem)] lg:h-full">
                     <div class="swiper-wrapper">
                         <?php
                         foreach ($all_image_urls as $url) {
@@ -84,7 +84,7 @@ get_header();
                 <?php if (get_field('technical_details')) :
                     $technical_details = get_field('technical_details');
                 ?>
-                    <a href="<?php echo $technical_details['url']; ?>" class="group inline-block lg:flex items-center text-white rounded-[100px] pl-[2.4rem] pr-[6rem] py-[0.8rem] font-medium text-[1.4rem] cursor-pointer border border-solid border-beige bg-transparent transition-all duration-300 mb-[1.2rem] lg:mb-[0.8rem] relative tech-details-pdf-btn">
+                    <a href="<?php echo $technical_details['url']; ?>" class="group inline-block lg:flex items-center text-white rounded-[100px] pl-[2.4rem] pr-[6rem] py-[0.8rem] font-medium text-[1.4rem] cursor-pointer border border-solid border-beige bg-transparent transition-all duration-300 mb-[1.4rem] lg:mb-[0.8rem] relative tech-details-pdf-btn">
                         <?php
                         $arrowUrl = get_template_directory_uri() . '/assets/icons/arrow--right.svg';
                         ?>
@@ -92,7 +92,7 @@ get_header();
                         <img src="<?php echo $arrowUrl; ?>" alt="Arrow Right" class="!w-[1.7rem] !h-[1.2rem] ml-[1.2rem] group-hover:ml-[1.4rem] transition-all duration-300 ease-in-out absolute -translate-y-1/2 right-[2.4rem] top-[50%] group-hover:right-[1.6rem]">
                     </a>
                 <?php endif; ?>
-                <a href="#ask-price" class="group inline-block lg:flex items-center text-brown rounded-[100px] pl-[2.4rem] pr-[6rem] py-[0.8rem] font-medium text-[1.4rem] cursor-pointer border border-solid border-beige bg-beige transition-all duration-300 mb-[0.8rem] relative">
+                <a href="#ask-price" class="ask-for-price-btn group inline-block lg:flex items-center text-brown rounded-[100px] pl-[2.4rem] pr-[6rem] py-[0.8rem] font-medium text-[1.4rem] cursor-pointer border border-solid border-beige bg-beige transition-all duration-300 mb-[0.8rem] relative">
                     <?php
                     $arrowUrl = get_template_directory_uri() . '/assets/icons/arrow--right--brown.svg';
                     ?>
@@ -252,6 +252,40 @@ get_header();
     </div>
 
 </div>
+
+<div class="ask-price-modal hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50 flex items-center justify-center">
+    <button id="ask-price-modal-close" class="ask-price-modal__close rounded-full bg-[#F9DCBC] bg-opacity-10  w-[4.8rem] h-[4.8rem] flex items-center justify-center transition-all duration-300 ease-in-out hover:bg-opacity-20 absolute top-[2.4rem] right-[2.4rem] cursor-pointer z-50">
+        <?php
+        $close_icon_url = get_template_directory_uri() . '/assets/icons/close-icon.svg';
+        ?>
+        <i class=" block bg-contain bg-no-repeat bg-center w-[1.2rem] h-[1.2rem]" style="background-image: url('<?= $close_icon_url; ?>');">
+        </i>
+        <span class="screen-reader-text">Close</span>
+    </button>
+    <div class="w-full h-full relative flex items-center justify-center px-side-padding-mobile lg:px-side-padding-desktop py-[8rem] lg:py-[4.8rem]">
+        <form action="#" method="post" class="ask-price-modal__form w-full max-w-[50rem] bg-dark p-[3.2rem] rounded-[16px]">
+            <h2 class="text-beige text-[2.4rem] font-semibold"><?php pll_e('Ask for Price for:', 'starter'); ?></h2>
+            <p class="text-brightBeige text-[1.6rem] mb-[2.4rem]"><?php the_title(); ?></p>
+            <input type="hidden" name="productTitle" id="productTitle" value="<?php the_title(); ?>">
+            <input type="hidden" name="productLink" id="productLink" value="<?php the_permalink(); ?>">
+            <input type="hidden" name="productId" id="productId" value="<?php the_ID(); ?>">
+            <div class="mb-[2.4rem]">
+                <input type="text" name="fullName" id="fullName" class="w-full bg-[#313234] text-[#93959E] text-[1.4rem] leading-[1] px-[2.4rem] py-[1.8rem] border-2 border-solid border-[#4A4C4E] rounded-[4px] focus:outline-none focus:border-[#FFD700] transition-all duration-300 ease-in-out" placeholder="Full Name">
+            </div>
+            <div class="mb-[2.4rem]">
+                <input type="email" name="email" id="email" class="w-full bg-[#313234] text-[#93959E] text-[1.4rem] leading-[1] px-[2.4rem] py-[1.8rem] border-2 border-solid border-[#4A4C4E] rounded-[4px] focus:outline-none focus:border-[#FFD700] transition-all duration-300 ease-in-out"
+                    placeholder="Email">
+            </div>
+            <div class="mb-[2.4rem]">
+                <textarea name="message" id="message" class="w-full bg-[#313234] text-[#93959E] text-[1.4rem] leading-[1] px-[2.4rem] py-[1.8rem] border-2 border-solid border-[#4A4C4E] rounded-[4px] focus:outline-none focus:border-[#FFD700] transition-all duration-0 ease-in-out min-h-[20rem]" placeholder="Message"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-beige text-brown text-[1.4rem] font-medium py-[1.2rem] rounded-[100px] transition-all
+            duration-300 ease-in-out hover:bg-brown hover:text-beige"><?php pll_e('Send', 'starter'); ?></button>
+            <p class="status-message text-[1.4rem] leading-[1.5] mt-[1.6rem] text-center font-medium border border-solid  rounded-[4px] py-[1.2rem] hidden"></p>
+        </form>
+    </div>
+</div>
+
 
 <?php
 get_footer();

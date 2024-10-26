@@ -286,9 +286,10 @@ jQuery(document).ready(function ($) {
         const div = document.createElement('div');
         div.style.position = 'absolute';
         div.style.color = 'white';
-        div.style.fontSize = '3rem';
+        div.style.fontSize = '4.2rem';
         div.style.fontStyle = 'italic';
         div.style.textAlign = 'center';
+        div.style.fontFamily = 'Great Vibes, cursive';
         div.innerHTML = 'We are here';
         this.div_ = div;
 
@@ -296,10 +297,10 @@ jQuery(document).ready(function ($) {
         panes.overlayLayer.appendChild(div);
     };
 
-    let transformStyle = 'translate(-50%, -170%)';
+    let transformStyle = 'translate(-50%, -155%)';
     // If mobile
     if (window.innerWidth <= 1024) {
-        transformStyle = 'translate(-50%, -200%)';
+        transformStyle = 'translate(-50%, -170%)';
     }
     textOverlay.draw = function () {
         const overlayProjection = this.getProjection();

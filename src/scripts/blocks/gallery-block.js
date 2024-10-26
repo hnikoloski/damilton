@@ -2,6 +2,10 @@ import { Fancybox } from "@fancyapps/ui";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 
 jQuery(document).ready(function ($) {
+    if (!$('.kd-gallery-block__grid').length) {
+        return;
+    }
+
     let numberOfColumns = 4;
     if ($(window).width() < 1024) {
         numberOfColumns = 2;

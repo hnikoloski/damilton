@@ -34,7 +34,7 @@ $full_width_highlighted_texts = get_field('full_width_highlighted_texts');
                                         } else {
                                             echo 'lg:w-full max-w-[93.6rem] lg:mx-auto text-center';
                                         } ?>">
-            <h3 class="text-[3.2rem] lg:text-[4rem] italic text-[#799410]"><?php echo esc_html($sub_heading); ?></h3>
+            <h3 class="text-[3.2rem] lg:text-[6rem] leading-none italic text-[#799410] font-greatVibes"><?php echo esc_html($sub_heading); ?></h3>
             <p class="text-[4rem] lg:text-[4.8rem] font-medium text-beige leading-[1.15]">
                 <?php if ($highlighted_texts) : ?>
                     <?php foreach ($highlighted_texts as $highlighted_text) : ?>
@@ -46,7 +46,7 @@ $full_width_highlighted_texts = get_field('full_width_highlighted_texts');
                 <?php endif; ?>
             </p>
             <?php if (get_field('full_width_secondary_heading')) : ?>
-                <h4 class="text-[3.4rem] lg:text-[3.6rem] lg:text-[4.8rem] italic text-[#799410] mt-[1.6rem] lg:mt-0"><?php echo get_field('full_width_secondary_heading'); ?></h4>
+                <h4 class="text-[5.4rem] lg:text-[5.6rem] lg:text-[4.8rem] font-greatVibes italic text-[#799410] mt-[1.6rem] lg:mt-0 leading-none lg:leading-[inherit]"><?php echo get_field('full_width_secondary_heading'); ?></h4>
             <?php endif; ?>
         </div>
         <?php if (!$full_width_highlighted_texts) { ?>

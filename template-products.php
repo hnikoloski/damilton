@@ -8,26 +8,38 @@ get_template_part('template-parts/inner-hero');
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <?php
-// Get product categories
+// Get the current language
+$current_language = pll_current_language();
+// Get product categories filtered by the current language
 $product_categories = get_terms('product_cat', array(
     'orderby'    => 'name',
     'order'      => 'ASC',
     'hide_empty' => true,
+    'lang'       => pll_current_language(),
 ));
 
-// Get brands (assuming your custom post type for brands is 'brand')
+// Get brands (assuming your custom post type for brands is 'brand'), filtered by current language
 $brands = get_posts(array(
-    'post_type' => 'brand',
+    'post_type'      => 'brand',
     'posts_per_page' => -1,
-    'orderby' => 'title',
-    'order' => 'ASC',
+    'orderby'        => 'title',
+    'order'          => 'ASC',
+    'lang'           => pll_current_language(),
 ));
-
+// Query to get the number of products for the current language
+$products_in_current_language = new WP_Query(array(
+    'post_type'      => 'product',
+    'posts_per_page' => -1,
+    'lang'           => $current_language,
+    'fields'         => 'ids',
+));
+// Get the count of products in the current language
+$product_count = $products_in_current_language->found_posts;
 ?>
 
 <div class="px-side-padding-mobile lg:px-side-padding-desktop">
     <h2 class="text-[4.8rem] text-beige my-[4rem] relative inline-block pr-[1.2em] leading-none font-medium"><?php echo get_the_title(); ?>
-        <span class="leading-none products-total-num text-white absolute -top-[1.2rem] right-0 bg-none text-[2rem] px-[1.2rem] py-[0.6rem] rounded-[100px] border border-solid border-beige"><?php echo wp_count_posts('product')->publish; ?></span>
+        <span class="leading-none products-total-num text-white absolute -top-[1.2rem] right-0 bg-none text-[2rem] px-[1.2rem] py-[0.6rem] rounded-[100px] border border-solid border-beige"><?php echo $product_count; ?></span>
     </h2>
 
     <div class="products-filters block lg:flex">
@@ -35,14 +47,14 @@ $brands = get_posts(array(
             <input type="hidden" name="category" value="*">
             <input type="hidden" name="brand" value="*">
             <input type="hidden" name="sort" value="a-z">
+            <input type="hidden" name="lang" value="<?php echo pll_current_language(); ?>">
         </form>
         <div class="products-filters__categories">
             <ul class="flex gap-x-[1.6rem] gap-y-[1rem] flex-wrap w-full lg:w-auto">
                 <li class="products-filters__category text-brown bg-beige rounded-[100px] px-[2.4rem] py-[0.8rem] font-medium text-[1.4rem] cursor-pointer border border-solid border-beige hover:bg-beige hover:text-brown transition-all duration-300 mb-[0.8rem]" data-category="*">
-                    All (<span class="products-filters__category__number"><?php echo wp_count_posts('product')->publish; ?></span>)
+                    <?php pll_e('All'); ?> (<span class="products-filters__category__number"><?php echo $product_count; ?></span>)
                 </li>
-                <?php foreach ($product_categories as $category) :
-                ?>
+                <?php foreach ($product_categories as $category) : ?>
                     <li class="products-filters__category text-white rounded-[100px] px-[2.4rem] py-[0.8rem] font-medium text-[1.4rem] cursor-pointer border border-solid border-beige hover:bg-beige hover:text-brown transition-all duration-300 mb-[0.8rem]" data-category="<?php echo $category->slug; ?>">
                         <?php echo $category->name; ?> (<span class="products-filters__category__number"><?php echo $category->count; ?></span>)
                     </li>
@@ -87,3 +99,4 @@ $brands = get_posts(array(
 
 <?php
 get_footer();
+?>

@@ -2,7 +2,7 @@
 function get_promotions($request)
 {
     $page = $request->get_param('page');
-
+    $lang = $request->get_param('lang');
     $query = new WP_Query(array(
         'post_type' => 'promotion',
         'orderby' => 'date',
@@ -10,6 +10,7 @@ function get_promotions($request)
         'posts_per_page' => 6,
         'post_status' => 'publish',
         'paged' => $page,
+        'lang' => $lang,
     ));
 
     $promotions = $query->posts;
