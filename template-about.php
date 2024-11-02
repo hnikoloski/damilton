@@ -56,11 +56,11 @@ get_template_part('template-parts/inner-hero');
         // Find the words wraped in {large} {/large} tags and replace them with the span tag
         $bottom_content = preg_replace('/{large}(.*?){\/large}/', '<span class="text-[9.6rem] block text-beige">$1</span>', $bottom_content);
         ?>
-        <div class="relative w-full h-[40rem] lg:h-[50rem] min-h-[68rem] lg:min-h-[89rem] bg-cover bg-no-repeat bg-center rounded-[20px] lg-[1.5rem] px-[1.5rem] lg:px-[20.8rem] py-[7.2rem] lg:py-[5.6rem] flex flex-col" style="background-image: url('<?= $ribbon_image_url; ?>');">
+        <div class="relative w-full h-[40rem] lg:h-[50rem] min-h-[68rem] lg:min-h-[89rem] bg-cover bg-no-repeat bg-[40%_50%] lg:bg-center rounded-[20px] lg-[1.5rem] px-[1.5rem] lg:px-[20.8rem] pt-[7.2rem] pb-[2.8rem] lg:pt-[5.6rem] lg:pb-[5.6rem] flex flex-col" style="background-image: url('<?= $ribbon_image_url; ?>');">
             <?php
             $ribbon_words = get_field('ribbon_words');
             if ($ribbon_words) { ?>
-                <div class="overflow-hidden absolute top-[50%] -left-[1.5rem] lg:-left-[12rem] right-0 transform -translate-y-1/2 w-[200%]">
+                <div class="overflow-hidden absolute top-[54%] lg:top-[50%] -left-[1.5rem] lg:-left-[12rem] right-0 transform -translate-y-1/2 w-[200%]">
                     <div class="flex whitespace-nowrap animate-ribbonAnim ribbon-words">
                         <?php foreach ($ribbon_words as $word) {
                             $word_text = $word['word']; ?>

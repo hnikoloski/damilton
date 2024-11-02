@@ -3,10 +3,20 @@
 
 get_header();
 get_template_part('template-parts/inner-hero');
+$current_language = pll_current_language();
+$brands_query = new WP_Query(array(
+    'post_type'      => 'brand',
+    'posts_per_page' => -1,
+    'post_status'    => 'publish',
+    'lang'           => $current_language,
+    'fields'         => 'ids',
+));
+
+$brands_count = $brands_query->found_posts;
 ?>
 <div class="px-side-padding-mobile lg:px-side-padding-desktop">
     <h2 class="text-[4.8rem] text-beige my-[4rem] relative inline-block pr-[1.2em] leading-none font-medium"><?php pll_e('Brands'); ?>
-        <span class="leading-none brands-total-num text-white absolute -top-[1.2rem] right-0 bg-none text-[2rem] px-[1.2rem] py-[0.6rem] rounded-[100px] border border-solid border-beige"><?php echo wp_count_posts('brand')->publish; ?></span>
+        <span class="leading-none brands-total-num text-white absolute -top-[1.2rem] right-0 bg-none text-[2rem] px-[1.2rem] py-[0.6rem] rounded-[100px] border border-solid border-beige"><?php echo $brands_count; ?></span>
     </h2>
 
     <div class="flex flex-wrap items-stretch justify-between brands-results align-stretch">
@@ -17,6 +27,7 @@ get_template_part('template-parts/inner-hero');
             'order' => 'ASC',
             'posts_per_page' => 4,
             'post_status' => 'publish',
+            'lang' => pll_current_language(),
         ));
         ?>
 
@@ -50,7 +61,7 @@ get_template_part('template-parts/inner-hero');
 
     </div>
 
-    <div id="load-more-brands" class="rounded-full p-4 lg:p-0 w-[8rem] h-[8rem] lg:w-[16rem] lg:h-[16rem] cursor-pointer flex justify-center items-center bg-[#313234] mx-auto shadow-loadShadow mt-[4rem] lg:mt-[4.8rem] hover:shadow-none transition-all duration-300 ease-in-out hover:scale-105 active:scale-95" data-page="2">
+    <div id="load-more-brands" class="rounded-full p-4 lg:p-0 w-[8rem] h-[8rem] lg:w-[16rem] lg:h-[16rem] cursor-pointer flex justify-center items-center bg-[#313234] mx-auto shadow-loadShadow mt-[4rem] lg:mt-[4.8rem] hover:shadow-none transition-all duration-300 ease-in-out hover:scale-105 active:scale-95" data-page="2" data-lang="<?php echo pll_current_language(); ?>">
         <span class="text-beige text-[1.4rem] lg:text-[1.6rem] uppercase w-full mx-auto text-center font-bold">
             <?php pll_e('Load More', 'starter'); ?>
         </span>

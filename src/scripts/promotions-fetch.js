@@ -3,7 +3,8 @@ import axios from 'axios';
 jQuery(document).ready(function ($) {
     const promotionsContainer = $('.promotions-results');
     const promotionsFetch = $('#load-more-promotions');
-
+    // Early exit if the promotions container is not found
+    if (!promotionsContainer.length) return;
     // Promotion Card Component
     function promotionCardComponent(promotion) {
         // Define badge styles based on the discount percentage
@@ -26,7 +27,7 @@ jQuery(document).ready(function ($) {
             promoBackgroundColor = '#FB1993';
             promoBorderColor = '#F4F0EA';
         }
-
+        console.log(promotion);
         return `
             <div class="product-card w-full lg:w-[calc(33.33%-2.4rem)] mb-[5.6rem]">
                 <div class="product-image mb-[.8rem] w-full !h-[36.8rem] relative">
@@ -45,6 +46,7 @@ jQuery(document).ready(function ($) {
                 <div class="product-title mb-[2.4rem] text-[2.4rem] text-beige font-semibold leading-[1.375]">
                     ${promotion.title}
                 </div>
+                
                 <div class="product-link">
                     <a href="${promotion.link}" class="group flex items-center text-[1.4rem] font-medium text-brightBeige w-fit">
                         ${promotion.link_text}
@@ -62,27 +64,7 @@ jQuery(document).ready(function ($) {
         let lang = promotionsContainer.attr('data-lang');
         return axios.get(`${api_url}?page=${page}&lang=${lang}`);
     }
-    fetchPromotions(1).then(response => {
-        const data = response.data;
-        const promotions = data.promotions;
-        const maxPages = data.max_pages;
 
-        promotions.forEach(promotion => {
-            const promotionHtml = promotionCardComponent(promotion);
-            promotionsContainer.append(promotionHtml);
-        });
-
-        // Increment the data-page attribute
-        promotionsFetch.attr('data-page', 2);
-
-        // Hide the button if the last page is reached
-        if (maxPages === 1) {
-            promotionsFetch.hide();
-        }
-    }).catch(error => {
-        console.error('Error fetching promotions:', error);
-    }
-    );
 
 
     // Load more promotions on button click

@@ -30,12 +30,12 @@ $full_width_highlighted_texts = get_field('full_width_highlighted_texts');
 <div <?php echo $anchor; ?> class="<?php echo esc_attr($class_name); ?> py-[3.7rem] lg:pt-[7.6rem] lg:pb-[9.6rem] px-side-padding-mobile lg:px-[22rem]">
     <div class="flex flex-col md:flex-row">
         <div class="text-left w-full <?php if (!$full_width_highlighted_texts) {
-                                            echo 'lg:w-1/2 pr-[2rem]';
+                                            echo 'lg:w-1/2 lg:pr-[2rem]';
                                         } else {
                                             echo 'lg:w-full max-w-[93.6rem] lg:mx-auto text-center';
                                         } ?>">
-            <h3 class="text-[3.2rem] lg:text-[6rem] leading-none italic text-[#799410] font-greatVibes"><?php echo esc_html($sub_heading); ?></h3>
-            <p class="text-[4rem] lg:text-[4.8rem] font-medium text-beige leading-[1.15]">
+            <h3 class="text-[5.8rem] lg:text-[6.4rem] leading-none text-[#799410] font-greatVibes mb-[2.4rem] lg:mb-0"><?php echo esc_html($sub_heading); ?></h3>
+            <p class="text-[4rem] lg:text-[4.8rem] font-medium text-beige leading-[1.15] mb-[4rem] lg:mb-0">
                 <?php if ($highlighted_texts) : ?>
                     <?php foreach ($highlighted_texts as $highlighted_text) : ?>
                         <?php echo esc_html($highlighted_text['text_part']); ?>
@@ -46,7 +46,7 @@ $full_width_highlighted_texts = get_field('full_width_highlighted_texts');
                 <?php endif; ?>
             </p>
             <?php if (get_field('full_width_secondary_heading')) : ?>
-                <h4 class="text-[5.4rem] lg:text-[5.6rem] lg:text-[4.8rem] font-greatVibes italic text-[#799410] mt-[1.6rem] lg:mt-0 leading-none lg:leading-[inherit]"><?php echo get_field('full_width_secondary_heading'); ?></h4>
+                <h4 class="text-[5rem] lg:text-[5.6rem] lg:text-[4.8rem] font-greatVibes text-[#799410] mt-[1.6rem] lg:mt-0 leading-none lg:leading-[inherit]"><?php echo get_field('full_width_secondary_heading'); ?></h4>
             <?php endif; ?>
         </div>
         <?php if (!$full_width_highlighted_texts) { ?>
@@ -55,10 +55,10 @@ $full_width_highlighted_texts = get_field('full_width_highlighted_texts');
                                             if ($remove_top_spacing_on_second_column) {
                                                 echo ' pt-0 lg:pl-[10rem]';
                                             } else {
-                                                echo ' pt-[6.5rem] lg:pl-[4.8rem]';
+                                                echo ' lg:pt-[6.5rem] lg:pl-[4.8rem]';
                                             }
                                             ?>">
-                <p class="text-beige text-[1.6rem] leading-[1.5]"><?php echo esc_html($description); ?></p>
+                <p class="text-beige text-[1.8rem] lg:text-[1.6rem] leading-[1.5]"><?php echo esc_html($description); ?></p>
                 <?php if ($about_us_link) :
                     $arrow_right_path = get_template_directory_uri() . '/assets/icons/arrow--right.svg';
                     $arrow_right_brown_path = get_template_directory_uri() . '/assets/icons/arrow--right--brown.svg';

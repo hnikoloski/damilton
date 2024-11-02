@@ -1,7 +1,7 @@
 <?php
 if (!defined('_S_VERSION')) {
     // Replace the version number of the theme on each release.
-    define('_S_VERSION', '1.0.0');
+    define('_S_VERSION', '1.0.1');
 }
 
 
@@ -15,7 +15,7 @@ if (!defined('_S_VERSION')) {
 
 if (!defined('_S_VERSION')) {
     // Replace the version number of the theme on each release.
-    define('_S_VERSION', '1.0.0');
+    define('_S_VERSION', '1.0.1');
 }
 
 if (!function_exists('starter_setup')) :
@@ -232,3 +232,13 @@ function my_acf_google_map_api($api)
     return $api;
 }
 add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
+
+
+// Get acf repeater field from options page
+$translationsField = get_field('translation_strings', 'option');
+
+// Loop through repeater field
+foreach ($translationsField as $translation) {
+    // Register Polylang String
+    pll_register_string('tamtam', $translation['string'], 'tamtam');
+}

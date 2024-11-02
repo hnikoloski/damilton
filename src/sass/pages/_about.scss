@@ -14,7 +14,7 @@
 
             &__top-content,
             &__bottom-content {
-                @apply text-[1.6rem] text-brightBeige leading-[1.2];
+                @apply text-[1.6rem] text-brightBeige leading-[1.5] lg:leading-[1.2];
 
                 p {
                     @apply text-[1.6rem];

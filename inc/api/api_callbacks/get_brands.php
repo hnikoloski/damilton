@@ -2,6 +2,7 @@
 function get_brands($request)
 {
     $page = $request->get_param('page');
+    $lang = $request->get_param('lang');
 
     $query = new WP_Query(array(
         'post_type' => 'brand',
@@ -10,7 +11,9 @@ function get_brands($request)
         'posts_per_page' => 4,
         'post_status' => 'publish',
         'paged' => $page,
+        'lang' => $lang,
     ));
+
 
     $brands = $query->posts;
     $results = array();

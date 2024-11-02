@@ -87,4 +87,11 @@ jQuery(document).ready(function ($) {
             $('#lang-dropdown').addClass('scale-y-0');
         }
     });
+
+    if ($(window).width() < 769) {
+        if ($('.inner-hero').length) {
+            let headerHeight = $('#masthead').outerHeight();
+            $('.inner-hero').css('padding-top', headerHeight);
+        }
+    }
 });

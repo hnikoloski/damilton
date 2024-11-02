@@ -69,13 +69,27 @@ $promotions_count = $promotions_query->found_posts;
             $promo_permalink = get_field('promotion_link', $promo_id);
             $promo_products = get_field('promo_products', $promo_id); // relation field
             // If promo_permalink is empty, set it to the /products?products=id1,id2,id3...
-            if (!$promo_permalink) {
-                // Convert the array of post objects to an array of post IDs
-                $promo_products_ids = array_map(function ($product) {
-                    return $product->ID;
-                }, $promo_products);
-                $promo_permalink = '/products?promo_products=' . implode(',', $promo_products_ids);
+            // Check if `promotion_link` is empty and generate a default permalink
+            if (empty($promo_permalink)) {
+                if (!empty($promo_products)) {
+                    // Convert the array of product post objects to an array of product IDs
+                    $promo_products_ids = array_map(function ($product) {
+                        return $product->ID;
+                    }, $promo_products);
+                    $lang = pll_current_language();
+                    if ($lang !== 'en') {
+                        $promo_permalink = '/' . $lang . '/продукти?promo_products=' . implode(',', $promo_products);
+                    } else {
+
+                        $promo_permalink = '/products?promo_products=' . implode(',', $promo_products);
+                    }
+                } else {
+                    // Fallback URL if no products are associated
+                    $promo_permalink = '/products';
+                }
             }
+
+            echo "<!-- Promotion ID: $promo_id | Discount Percentage: $promo_badge_num | Subtitle: $promo_subtitle | Permalink: $promo_permalink -->";
         ?>
             <div class="product-card w-full lg:w-[calc(33.33%-2.4rem)] mb-[5.6rem]">
                 <div class="product-image mb-[.8rem] w-full !h-[36.8rem] relative">

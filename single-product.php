@@ -10,7 +10,7 @@
 
 get_header();
 ?>
-<div class="px-side-padding-mobile lg:px-side-padding-desktop pt-[19.2rem]">
+<div class="px-side-padding-mobile lg:px-side-padding-desktop pt-[11rem] lg:pt-[19.2rem]">
     <div class="single-product__content block lg:flex ">
         <div class="single-product__content__gallery flex flex-wrap w-full lg:w-[70rem] lg:h-[55.2rem]">
             <?php
@@ -84,7 +84,7 @@ get_header();
                 <?php if (get_field('technical_details')) :
                     $technical_details = get_field('technical_details');
                 ?>
-                    <a href="<?php echo $technical_details['url']; ?>" class="group inline-block lg:flex items-center text-white rounded-[100px] pl-[2.4rem] pr-[6rem] py-[0.8rem] font-medium text-[1.4rem] cursor-pointer border border-solid border-beige bg-transparent transition-all duration-300 mb-[1.4rem] lg:mb-[0.8rem] relative tech-details-pdf-btn">
+                    <a href="<?php echo $technical_details['url']; ?>" class="group inline-block lg:flex items-center text-white rounded-[100px] pl-[2.4rem] pr-[6rem] py-[0.8rem] font-medium text-[1.4rem] cursor-pointer border border-solid border-beige bg-transparent transition-all duration-300 mb-[2rem] lg:mb-[0.8rem] relative tech-details-pdf-btn">
                         <?php
                         $arrowUrl = get_template_directory_uri() . '/assets/icons/arrow--right.svg';
                         ?>

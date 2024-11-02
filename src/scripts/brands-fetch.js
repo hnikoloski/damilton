@@ -29,21 +29,22 @@ jQuery(document).ready(function ($) {
     }
 
     // Fetch brands from API
-    function fetchBrands(page) {
+    function fetchBrands(page, lang) {
         let home_url = window.location.origin;
         let api_url = home_url + '/wp-json/tamtam/v1/get-brands';
-        return axios.get(`${api_url}?page=${page}`);
+        return axios.get(`${api_url}?page=${page}&lang=${lang}`);
     }
 
     // Load more brands on button click
     brandsFetch.on('click', function () {
         const page = parseInt(brandsFetch.attr('data-page'));
+        let lang = brandsFetch.attr('data-lang');
         if (brandsFetch.hasClass('loading')) return;
 
         // Disable the button while loading
         brandsFetch.addClass('cursor-wait opacity-50 loading').prop('disabled', true);
 
-        fetchBrands(page).then(response => {
+        fetchBrands(page, lang).then(response => {
             const data = response.data;
             const brands = data.brands;
             const maxPages = data.max_pages;

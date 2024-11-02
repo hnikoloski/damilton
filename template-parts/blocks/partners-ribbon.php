@@ -19,7 +19,7 @@ if (!empty($block['align'])) {
 }
 ?>
 
-<div <?php echo $anchor; ?> class="<?php echo esc_attr($class_name); ?> bg-no-repeat bg-cover bg-center my-[5rem] overflow-hidden">
+<div <?php echo $anchor; ?> class="<?php echo esc_attr($class_name); ?> bg-no-repeat bg-cover bg-center my-[5rem] overflow-hidden opacity-50">
     <?php if (have_rows('partner_logos')) : ?>
         <div class="swiper-wrapper items-center justify-center">
             <?php while (have_rows('partner_logos')) : the_row();
